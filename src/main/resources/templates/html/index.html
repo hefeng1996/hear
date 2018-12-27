@@ -38,6 +38,10 @@
             -o-transition: border .2s ease-in-out;
             transition: border .2s ease-in-out;
         }
+        .bandan{
+            font-size: 1.5em;
+            color: #555555;
+        }
     </style>
 </head>
 <body>
@@ -95,7 +99,7 @@
     </nav>
 </div>
 
-
+<div style="background-color: #d94f5c;height: 20px;"></div>
 <div class="container">
     <!--轮播图-->
     <div id="myCarousel" class="carousel slide">
@@ -131,14 +135,14 @@
             <!--热门Popular-->
             <div style="height: 532px">
                 <div style="height: 35px">
-                    <span>热门歌单</span>
+                    <span class="bandan">热门歌单</span>
                 </div>
                 <!--歌单-->
                 <div class="row">
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
-                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span class="bandan"></span>
                         </div>
 
                     </div>
@@ -185,7 +189,7 @@
 
 
             <div>
-                <span>热门专辑</span>
+                <span class="bandan">热门专辑</span>
             </div>
             <!--专辑-->
             <div  style="height: 100px;">
@@ -214,18 +218,26 @@
             </div>
 
             <div>
-                <span>热门单曲</span>
+                <span class="bandan">热门单曲</span>
             </div>
             <!--单曲（排行榜）-->
             <div  style="height: 400px;">
                 <div class="row">
                     <div class="col-md-4">
+                        <div class="container">
+                            <img th:src="@{/img/rege.jpg}" alt="热歌榜">
+                        </div>
 
                     </div>
                     <div class="col-md-4">
-
+                        <div class="container">
+                            <img th:src="@{/img/xinge.jpg}" alt="新歌版">
+                        </div>
                     </div>
                     <div class="col-md-4">
+                        <div class="container">
+                            <img th:src="@{/img/yuanchuang.jpg}" alt="原创版">
+                        </div>
 
                     </div>
                 </div>
