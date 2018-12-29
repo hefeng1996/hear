@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/mplayer.css}" type="text/css" media="all"/>
     <link rel="stylesheet" th:href="@{/css/component.css}" type="text/css" media="all"/>
     <!--公共样式-->
-    <!--<link rel="stylesheet" th:href="@{/css/normalize.css}" />-->
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link rel="stylesheet" th:href="@{/css/demo.css}"/>
     <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
 
@@ -45,10 +45,6 @@
     </style>
 </head>
 <body>
-<!--<div class="info">
-	<h1>Hear</h1>
-	<p>请按F12打开控制台查看回调事件效果</p>
-</div>-->
 <!--导航栏-->
 <div class="container" style="height: 70px; width: 100%; margin: 0;padding: 0;">
     <nav class="nav menu menu--miranda" style="background-color:#000000;height: 70px;">
@@ -73,29 +69,6 @@
             </div>
         </div>
 
-        <!--<ul class="menu__list" style="width: 77%;" id="ul">
-            <li class="menu__item menu__item&#45;&#45;current" style="margin-left: 1px"><a href="#" class="menu__link">推荐</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a class="menu__link" onclick="" href="javascript:void(0) ">排行榜</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a class="menu__link" onclick="" href="javascript:void(0)">歌单</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a href="#" class="menu__link" onclick="" >歌手</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a href="#" class="menu__link" onclick="">我的音乐</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a href="#" class="menu__link" onclick="">朋友</a></li>
-            <div class="search d7">
-                <form th:action="@{/search/searchall.action}" method="get">
-                    <input type="text" placeholder="Hear..." name="content">
-                    <button type="submit"><img th:src="@{/img/1.jpg}" style="position: relative;left: -5px"/></button>
-                </form>
-            </div>
-            <li class="menu__item" style="margin-left: -10px;">
-                &lt;!&ndash;<th:if test="${empty sessionScope.user}">&ndash;&gt;
-                    <a href="#" class="menu__link" onclick="" >登录</a>
-                &lt;!&ndash;</th:if>&ndash;&gt;
-                &lt;!&ndash;<th:if test="${not empty sessionScope.user}">
-                    <a href="javascript:void(0)" style="position:relative;top: 10px;width: 80px;"onclick="" ><img style="border-radius: 40px;width: 40px;height: 40px;display: inline;" src="<%= resourcesPath%>head/${sessionScope.user.img}" ></a>
-                    <a href="#"  style="position:relative;top: 10px;width: 80px;color: #e3e3e3;margin-left: 10px" onclick="">退出</a>
-                </th:if>&ndash;&gt;
-            </li>
-        </ul>-->
     </nav>
 </div>
 
@@ -129,9 +102,9 @@
     </div>
 
     <!--模块-->
-    <div class="row" style="border: 1px solid red">
+    <div class="row">
         <!--左侧推荐-->
-        <div class="col-md-9" style="height: 800px;border: 1px solid yellow">
+        <div class="col-md-9">
             <!--热门Popular-->
             <div style="height: 532px">
                 <div style="height: 35px">
@@ -142,8 +115,10 @@
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <!--<img th:src="'@{/upload/}'+'img/head/林俊杰.jpg'" alt="...">-->
-                            <img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">
-                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span class="bandan"></span>
+                            <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">-->
+                            <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">-->
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
 
                     </div>
@@ -164,7 +139,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
@@ -193,7 +168,7 @@
                 <span class="bandan">热门专辑</span>
             </div>
             <!--专辑-->
-            <div  style="height: 100px;">
+            <div class="mb-2">
                 <div class="row">
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
@@ -222,7 +197,7 @@
                 <span class="bandan">热门单曲</span>
             </div>
             <!--单曲（排行榜）-->
-            <div  style="height: 400px;">
+            <div class="mb-2">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="container">
@@ -308,13 +283,13 @@
 
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/jquery.js}"></script>
 <script th:src="@{/bootstrap/js/bootstrap.js}"></script>
 <script th:src="@{/js/mplayer.js}"></script>
 <script th:src="@{/js/mplayer-list.js}"></script>
 <script th:src="@{/js/mplayer-functions.js}"></script>
 <script src="//cdn.bootcss.com/jquery-nstslider/1.0.13/jquery.nstSlider.min.js"></script>
-<script th:inline= "javascript">
+<!--<script th:inline= "javascript">
     var mplyer_song;
     $.ajax({
         type:"POST",
@@ -386,8 +361,8 @@
             "lrc":"[ti:书香年华][ar:许嵩\/孙涛][al:书香年华][by:][offset:0][00:00.79]书香年华 - 许嵩&孙涛[00:01.86]词：许嵩&车万育[00:03.40]曲：许嵩[00:04.08]编曲：许嵩[00:05.72]童声：云对雨雪对风晚照对晴空[00:11.96]来鸿对去燕宿鸟对鸣虫[00:17.96]三尺剑六钧弓岭北对江东[00:24.04]人间清暑殿天上广寒宫[00:32.59]许：多久没有提笔为你写一首诗[00:39.07]对偶平仄押韵难道都在故纸[00:45.09]常常欲言又止表达缺乏情致[00:50.65]书到用时才恨少还真那么回事[00:56.68]孙：梦里一记钟声恍然敲回古时[01:02.97]花明柳媚春日书院里又添学子[01:09.06]苦读百卷经史不止为功名之资[01:14.66]学问里自有传承和坚持[01:19.75]合：琅琅书声如春风[01:22.79]拂过千年时空[01:25.88]少年啊壮志在胸赋首辞让人感动[01:31.91]借一场古典的梦[01:34.88]与东坡热情相拥[01:38.80]没告诉他将被千古传颂[01:45.23]童声：云对雨雪对风晚照对晴空[01:50.90]来鸿对去燕宿鸟对鸣虫[01:56.98]三尺剑六钧弓岭北对江东[02:02.95]人间清暑殿天上广寒宫[02:08.97]孙：梦里一记钟声恍然敲回古时[02:15.03]花明柳媚春日书院里又添学子[02:21.10]许：苦读百卷经史不止为功名之资[02:26.65]学问里自有传承和坚持[02:32.05]合：琅琅书声如春风[02:34.84]拂过千年时空[02:37.90]少年啊壮志在胸赋首辞让人感动[02:43.83]借一场古典的梦[02:46.81]与东坡热情相拥[02:50.63]没告诉他将被千古传颂[02:56.60]没告诉他将被千古传颂"
         }
     ]]*/
-</script>
-<script>
+</script>-->
+<script th:inline="javascript">
     $(function(){
         $('#myCarousel').carousel({interval:5000});
     })

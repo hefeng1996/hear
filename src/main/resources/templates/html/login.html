@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/mplayer.css}" type="text/css" media="all"/>
+    <link rel="stylesheet" th:href="@{/css/component.css}" type="text/css" media="all"/>
+    <!--公共样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
+
+    <link rel="stylesheet" th:href="@{/css/code.css}">
+    <link rel="stylesheet" th:href="@{/css/popup.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body class="background-pic">
+
+<!--<c:set var="myCookie" value="${cookie.userInfo.value }"></c:set>
+<c:set var="info" value="${fn:split(myCookie,"-") }"></c:set>-->
+<button hidden id="onlyChoseAlert" type="button">密码错误</button>
+
+<canvas id="rain"></canvas>
+<div class="container">
+    <div align="center">
+        <img id="" th:src="@{/images/logo.png}">
+    </div>
+    <form action="" id="myform" method="post">
+        <div class="form-group">
+            <input type="text" id="userName" name="userName" class="form-control"  value="" placeholder="用户名" style="width:310px">
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" name="password" class="form-control"  value="" placeholder="密   码" style="width:310px">
+        </div>
+        <div  style="width:210px" class="form-group">
+
+            <!--<c:if test="${empty cookie.userInfo.value }">-->
+                <div><input type="checkbox" value="1" name="checkbox" style="height: 15px;width: 15px;margin: 0px"></div>
+            <!--</c:if>-->
+            <!--<c:if test="${not empty cookie.userInfo.value }">-->
+                <div><input type="checkbox" value="1" checked="checked" name="checkbox" style="height: 15px;width: 15px;margin: 0px"></div>
+            <!--</c:if>-->
+
+            <div id="remember"><span style="width: 30px;height: 20px;color: #a7bbc8">记住我</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                <span class="forget" id="forget">&nbsp;</span></div>
+
+            <div id="regist"><button type="button" id="jump" class="btn btn-default"style="background-color: rgba(52,60,94,0.67);color: white;width: 100px" >注册</button></div>
+        </div>
+
+        <div id="captcha" style="position: relative" ></div>
+        <div id="msg"></div>
+    </form>
+</div>
+</body>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script th:src="@{/bootstrap/jquery.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<script src="//cdn.bootcss.com/jquery-nstslider/1.0.13/jquery.nstSlider.min.js"></script>
+<!--<script th:inline="javascript">
+    var contextPath = [[${#request.getContextPath()}]];//获取当前应用路径
+    $(function () {
+        $(".background-pic").attr("src",contextPath+"/images/loginbg.jpg");
+    });
+</script>-->
+<script type="text/javascript">
+    jigsaw.init(document.getElementById("captcha"), function () {
+
+        var userName=$("#userName").val;
+        var password=$("#password").val();
+        if (userName!=""&&password!=""){
+            document.getElementById("msg").innerHTML = "登录成功！";
+            document.getElementById("myform").submit();
+        }else{
+            $("#onlyChoseAlert").trigger("click");/*用户信息为空弹窗*/
+        }
+
+    })
+</script><!-- 验证成功跳转事件 -->
+<!--<script type="text/javascript" th:src="@{/js/code.js}"></script>&lt;!&ndash;验证码事件&ndash;&gt;-->
+<script type="text/javascript">
+    function error() {
+        $("#onlyChoseAlert").trigger("click");
+    }
+    var flag=${param.flag};
+    if(flag=="2"){
+        $(document).ready(function(){
+            window.onload=error();
+        });
+    }
+</script><!--密码错误弹窗>-->
+
+
+<script th:src="@{/js/popup.js}"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        var W = $(window).width(),
+            H = $(window).height(),
+            x2 = -15, len = 30, count = 100;
+        var canvas = document.getElementById("rain");
+        canvas.width = W;
+        canvas.height = H;
+        var ctx = canvas.getContext("2d");
+
+        setInterval(clearCanvas,100);
+        function clearCanvas() {
+            ctx.clearRect(0, 0, W, H);
+            draws();
+        }
+
+        function draw(x, y) {
+            //canvas写渐变：createLinearGradient（startX,startY,endX,endY）
+            var grd = ctx.createLinearGradient(x, y, x + x2, y + len);
+            grd.addColorStop(0, "rgba(0,0,0,0)");
+            grd.addColorStop(0.5, "rgba(105,105,105,1)");
+            grd.addColorStop(1, "rgba(255,255,255,1)");
+            ctx.strokeStyle = grd;
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + x2, y + len);
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.closePath();
+        }
+        function draws() {
+            for (var i = 1; i <= count; i++) {
+                // console.log(i)
+                draw(Math.random() * W, Math.random() * H);
+            }
+        }
+    });
+</script><!--下雨事件-->
+
+
+
+<script>
+    /*登录信息错误弹窗*/
+    $(function () {
+        //单次单选弹框
+        $("#onlyChoseAlert").click(function () {
+            var onlyChoseAlert = simpleAlert({
+                "content": "用户名或者密码错误!",
+                "buttons": {
+                    "确定": function () {
+                        onlyChoseAlert.close();
+                    }
+                }
+            })
+        })
+    })
+</script>
+<!--忘记密码事件-->
+<script>
+    $(function(){
+        $("#forget").hover(function(){
+            $("#forget").removeClass("forget").addClass("forget1");
+        },function(){
+            $("#forget").removeClass("forget1").addClass("forget");
+        })
+        $("#forget").click(function () {
+            window.open("<%=basePath%>personal.jsp");
+        })
+        $("#jump").click(function () {
+            window.open("<%=basePath%>jsp/register.jsp");
+        })
+    })
+</script>
+</html>
