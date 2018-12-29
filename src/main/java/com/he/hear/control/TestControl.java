@@ -9,6 +9,8 @@ public class TestControl {
 
     @RequestMapping("index")
     public String index(){
+
+        System.out.println();
         return "/html/index";
     }
 
