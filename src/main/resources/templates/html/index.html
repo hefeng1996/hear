@@ -106,13 +106,13 @@
         <!--左侧推荐-->
         <div class="col-md-9">
             <!--热门Popular-->
-            <div style="height: 532px">
-                <div style="height: 35px">
-                    <span class="bandan">热门歌单</span>
+            <div>
+                <div class="mb-2">
+                    <span class="bandan ">热门歌单</span>
                 </div>
                 <!--歌单-->
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-2">
                         <div href="#" class="thumbnail">
                             <!--<img th:src="'@{/upload/}'+'img/head/林俊杰.jpg'" alt="...">-->
                             <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">-->
@@ -122,50 +122,63 @@
                         </div>
 
                     </div>
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                    </div>
+
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                        </div>
-                    </div>
+
                 </div>
 
-                <div class="row mb-2">
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                        </div>
-                    </div>
-                </div>
+
+
+
             </div>
 
 
-            <div>
-                <span class="bandan">热门专辑</span>
+            <div class="mb-2">
+                <span class="bandan ">热门专辑</span>
             </div>
             <!--专辑-->
             <div class="mb-2">
@@ -193,25 +206,25 @@
                 </div>
             </div>
 
-            <div>
-                <span class="bandan">热门单曲</span>
+            <div class="mb-2">
+                <span class="bandan ">热门单曲</span>
             </div>
             <!--单曲（排行榜）-->
             <div class="mb-2">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="container">
+                        <div>
                             <img th:src="@{/img/rege.jpg}" alt="热歌榜">
                         </div>
 
                     </div>
                     <div class="col-md-4">
-                        <div class="container">
+                        <div>
                             <img th:src="@{/img/xinge.jpg}" alt="新歌版">
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="container">
+                        <div>
                             <img th:src="@{/img/yuanchuang.jpg}" alt="原创版">
                         </div>
 
@@ -283,7 +296,7 @@
 
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script th:src="@{/bootstrap/js/jquery.js}"></script>
+<script th:src="@{/bootstrap/jquery.js}"></script>
 <script th:src="@{/bootstrap/js/bootstrap.js}"></script>
 <script th:src="@{/js/mplayer.js}"></script>
 <script th:src="@{/js/mplayer-list.js}"></script>
