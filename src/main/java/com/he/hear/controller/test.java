@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("test")
 @Controller
-public class test {
+public class test{
 
     @RequestMapping("hear")
     public String hear(){
-        return "";
+        return "html/hear";
     }
 
 
