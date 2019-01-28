@@ -1,69 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.he.hear.mapper.RelationMapper">
-
-    <!--public List<Relation> selectRelationByUserId13(int id);-->
-    <!--public List<Relation> selectRelationByUserId23(int id);-->
-    <select id="selectRelationByUserId13" resultType="com.he.hear.pojo.Relation" parameterType="int">
-      SELECT * FROM relation where user_id=#{_paramter} AND ( status=3 OR status=1 );
-    </select>
-    <select id="selectRelationByUserId23" resultType="com.he.hear.pojo.Relation" parameterType="int">
-        SELECT * FROM relation where user_id=#{_paramter} AND( status=3 OR status=2 );
-    </select>
-    <!--public boolean removeRelationById(int id);
-    public boolean addRelatonById(int userId,int userById);-->
-    <insert id="addRelatonById" parameterType="int">
-        INSERT into relation (user_id,userBy_id,status) VALUES (#{param1},#{param2},1)
-    </insert>
-    <!--public List<Relation> selectRelationByAll(int userId,int userById);-->
-    <select id="selectRelationByAll" parameterType="int" resultType="com.he.hear.pojo.Relation">
-        SELECT * FROM relation where user_id=#{param1} AND userBy_id=#{param2};
-    </select>
-    <!--public boolean removeRelation(int userId);-->
-    <delete id="removeRelation" parameterType="int">
-        DELETE FROM relation WHERE user_id=#{param1} and userBy_id=#{param2}
-    </delete>
-
-
-    <resultMap id="fansMap" type="Relation">
-        <id column="id" property="id"></id>
-        <result column="status" property="status"></result>
-        <association property="userbyId" javaType="User">
-            <id column="uid" property="id"></id>
-            <result column="name" property="name"></result>
-            <result column="sex" property="sex"></result>
-            <result column="img" property="img"></result>
-            <result column="introduce" property="introduce"></result>
-        </association>
-    </resultMap>
-    <!--public List<Relation> selectFansByUserId23(int id);-->
-
-    <select id="selectFansByUserId23" resultMap="fansMap" parameterType="int">
-      SELECT r.status,r.id,u.id AS uid,u.name,u.sex,u.img,u.introduce FROM user u,relation r WHERE r.userBy_id=u.id and r.user_id=#{_parameter} AND( status=3 OR status=2 )
-    </select>
-
-    <!--public boolean updateAttention(int userid,int id);-->
-    <update id="updateAttention" parameterType="int">
-        UPDATE relation set status='3' WHERE user_id=#{param1} and userBy_id=#{param2}
-    </update>
-    <!--public boolean updateAttentionByuserbyid(int userbyid,int id);-->
-    <update id="updateAttentionByuserbyid" parameterType="int">
-        UPDATE relation set status='3' WHERE user_id=#{param2} and userBy_id=#{param1}
-    </update>
-
-
-    <!--public List<Relation> selectAttentionByUserId13(int id);-->
-    <select id="selectAttentionByUserId13" resultMap="fansMap" parameterType="int">
-        SELECT r.status,r.id,u.id AS uid,u.name,u.sex,u.img,u.introduce FROM user u,relation r WHERE r.userBy_id=u.id and r.user_id=#{_parameter} AND( status=3 OR status=1 )
-    </select>
-
-    <!--public boolean updateremoveAttention(int userid,int id);-->
-    <delete id="updateremoveAttention" parameterType="int">
-        DELETE FROM relation WHERE user_id=#{param1} and userBy_id=#{param2}
-    </delete>
-
-    <!--public boolean updateremoveAttentionByuserbyid(int userbyid,int id);-->
-    <update id="updateremoveAttentionByuserbyid" parameterType="int">
-        UPDATE relation set status='1' user_id=#{param2} and userBy_id=#{param1}
-    </update>
+  <resultMap id="BaseResultMap" type="com.he.hear.pojo.Relation">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="userBy_id" jdbcType="INTEGER" property="userbyId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, userBy_id, status
+  </sql>
+  <select id="selectByExample" parameterType="com.he.hear.pojo.RelationExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from relation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.he.hear.pojo.RelationExample">
+    delete from relation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.he.hear.pojo.Relation">
+    insert into relation (id, user_id, userBy_id, 
+      status)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userbyId,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.he.hear.pojo.Relation">
+    insert into relation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userbyId != null">
+        userBy_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userbyId != null">
+        #{userbyId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.he.hear.pojo.RelationExample" resultType="java.lang.Long">
+    select count(*) from relation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update relation
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userbyId != null">
+        userBy_id = #{record.userbyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update relation
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      userBy_id = #{record.userbyId,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
 </mapper>

@@ -1,11 +1,11 @@
 package com.he.hear.pojo;
-//管理员
+
 public class Admin {
-    private Integer id;//管理员ID
+    private Integer id;
 
-    private String name;//管理员用户名
+    private String name;
 
-    private String password;//密码
+    private String password;
 
     public Integer getId() {
         return id;

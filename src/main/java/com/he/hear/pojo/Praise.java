@@ -3,34 +3,9 @@ package com.he.hear.pojo;
 public class Praise {
     private Integer id;
 
-    private Integer typeId;
+    private Integer momentId;
 
-    private Integer type;
-
-    private Integer usr_id;
-
-
-    public Integer getUsr_id() {
-        return usr_id;
-    }
-
-    public void setUsr_id(Integer usr_id) {
-        this.usr_id = usr_id;
-    }
-
-    public Integer getMoment_id() {
-        return moment_id;
-    }
-
-    public void setMoment_id(Integer moment_id) {
-        this.moment_id = moment_id;
-    }
-
-    private Integer moment_id;
-
-
-
-    private Integer status;
+    private Integer userId;
 
     public Integer getId() {
         return id;
@@ -40,31 +15,19 @@ public class Praise {
         this.id = id;
     }
 
-    public Integer getTypeId() {
-        return typeId;
+    public Integer getMomentId() {
+        return momentId;
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public void setMomentId(Integer momentId) {
+        this.momentId = momentId;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-
-
-
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

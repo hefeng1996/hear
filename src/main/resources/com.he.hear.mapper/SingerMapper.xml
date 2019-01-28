@@ -1,111 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.he.hear.mapper.SingerMapper">
-    <resultMap id="GetSingerMap" type="com.he.hear.pojo.Singer">
-        <id column="id" property="id" />
-        <result column="name" property="name" />
-        <result column="sex" property="sex" />
-        <result column="zone" property="zone" />
-        <result column="img" property="img" />
-        <result column="introduce" property="introduce" />
-        <result column="bigimg" property="bigimg" />
-        <association property="song" javaType="com.he.hear.pojo.Song">
-            <result column="songname" property="name"/>
-        </association>
-        <association property="album" javaType="com.he.hear.pojo.Album">
-            <result column="albumname" property="name"/>
-        </association>
-    </resultMap>
-
-    <!--<association property="catory" javaType="GoodsCatory">
-        <result column="cname" property="cname"/>
-    </association>-->
-    <!--<resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="hear.entity.Album">
-        <result column="lyrics" jdbcType="LONGVARCHAR" property="lyrics" />
-    </resultMap>-->
-
-    <!--public List<Singer> selectSinger();-->
-    <select id="selectSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer limit 1,10
-    </select>
-
-    <!--public List<Singer> selectMySinger1();-->
-    <select id="selectMySinger1" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer limit 9,10
-    </select>
-
-    <!--public List<Singer> selectMySinger2();-->
-    <select id="selectMySinger2" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer limit 9,20
-    </select>
-    <!--public List<Singer> selectChMaleSinger();-->
-    <select id="selectChMaleSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=1 and zone=1 limit 0,20
-    </select>
-    <!--public List<Singer> selectChFemaleSinger();-->
-    <select id="selectChFemaleSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=0 and zone=1 limit 0,20
-    </select>
-    <!--public List<Singer> selectChBand();-->
-    <select id="selectChBand" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=2 and zone=1 limit 0,20
-    </select>
-    <!--public List<Singer> selectEngMaleSinger();-->
-    <select id="selectEngMaleSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=1 and zone=2 limit 0,20
-    </select>
-    <!--public List<Singer> selectEngFemaleSinger();-->
-    <select id="selectEngFemaleSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=0 and zone=2 limit 0,20
-    </select>
-    <!--public List<Singer> selectEngBand();-->
-    <select id="selectEngBand" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=2 and zone=2 limit 0,20
-    </select>
-    <!--public List<Singer> selectJkMaleSinger();-->
-    <select id="selectJkMaleSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=1 and zone=3 limit 0,20
-    </select>
-    <!--public List<Singer> selectJkFemaleSinger();-->
-    <select id="selectJkFemaleSinger" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=0 and zone=3 limit 0,20
-    </select>
-    <!--public List<Singer> selectJkBand();-->
-    <select id="selectJkBand" resultType="com.he.hear.pojo.Singer">
-        select id,img,name from singer where sex=2 and zone=3 limit 0,20
-    </select>
-
-    <resultMap id="GetSingerHost" type="com.he.hear.pojo.Singer">
-        <id column="singerid" property="id"/>
-        <result column="name" property="name" />
-        <result column="introduce" property="introduce" />
-        <result column="bigimg" property="bigimg" />
-        <collection property="song" ofType="com.he.hear.pojo.Song">
-            <id column="id" property="id"/>
-            <result column="songname" property="name"/>
-            <result column="duration" property="duration"/>
-            <result column="url" property="url"/>
-            <association property="album" javaType="com.he.hear.pojo.Album">
-                 <result property="name" column="albumname"/>
-            </association>
-        </collection>
-    </resultMap>
-    <!--public List<Singer> selectSingerhost(Integer id);-->
-    <select id="selectSingerhost" parameterType="int" resultMap="GetSingerHost">
-        select s.id as singerid,s.bigimg,s.name,s.introduce,so.id,so.name as songname,so.duration,so.url,a.name as albumname
-        from singer AS s,song AS so,album AS a
-        WHERE s.id=#{_paramter} AND s.id= so.singer_id AND so.album_id = a.id
-        limit 20
-    </select>
-
-    <resultMap id="GetSimilarSinger" type="com.he.hear.pojo.Singer">
-        <id column="id" property="id"/>
-        <result column="name" property="name" />
-        <result column="img" property="img"/>
-    </resultMap>
-    <!--public List<Singer> selectSimliarSinger(int id);-->
-    <select id="selectSimliarSinger" parameterType="int" resultMap="GetSimilarSinger">
-        SELECT s.id,s.name,s.img from singer AS s where s.zone in(
-SELECT s.zone from singer as s WHERE s.id = #{_parameter}) and s.id != #{_parameter} order by rand() limit 6
-    </select>
+  <resultMap id="BaseResultMap" type="com.he.hear.pojo.Singer">
+    <result column="ID" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="zone" jdbcType="INTEGER" property="zone" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="bigimg" jdbcType="VARCHAR" property="bigimg" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.he.hear.pojo.Singer">
+    <result column="introduce" jdbcType="LONGVARCHAR" property="introduce" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, name, sex, zone, img, bigimg
+  </sql>
+  <sql id="Blob_Column_List">
+    introduce
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.he.hear.pojo.SingerExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from singer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.he.hear.pojo.SingerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from singer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.he.hear.pojo.SingerExample">
+    delete from singer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.he.hear.pojo.Singer">
+    insert into singer (ID, name, sex, 
+      zone, img, bigimg, 
+      introduce)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, 
+      #{zone,jdbcType=INTEGER}, #{img,jdbcType=VARCHAR}, #{bigimg,jdbcType=VARCHAR}, 
+      #{introduce,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.he.hear.pojo.Singer">
+    insert into singer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="zone != null">
+        zone,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="bigimg != null">
+        bigimg,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="zone != null">
+        #{zone,jdbcType=INTEGER},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="bigimg != null">
+        #{bigimg,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.he.hear.pojo.SingerExample" resultType="java.lang.Long">
+    select count(*) from singer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update singer
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null">
+        sex = #{record.sex,jdbcType=INTEGER},
+      </if>
+      <if test="record.zone != null">
+        zone = #{record.zone,jdbcType=INTEGER},
+      </if>
+      <if test="record.img != null">
+        img = #{record.img,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bigimg != null">
+        bigimg = #{record.bigimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduce != null">
+        introduce = #{record.introduce,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update singer
+    set ID = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      zone = #{record.zone,jdbcType=INTEGER},
+      img = #{record.img,jdbcType=VARCHAR},
+      bigimg = #{record.bigimg,jdbcType=VARCHAR},
+      introduce = #{record.introduce,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update singer
+    set ID = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=INTEGER},
+      zone = #{record.zone,jdbcType=INTEGER},
+      img = #{record.img,jdbcType=VARCHAR},
+      bigimg = #{record.bigimg,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
 </mapper>

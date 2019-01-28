@@ -1,7 +1,5 @@
 package com.he.hear.pojo;
 
-import java.util.List;
-
 public class Singer {
     private Integer id;
 
@@ -13,33 +11,9 @@ public class Singer {
 
     private String img;
 
-    private String introduce;
-
     private String bigimg;
 
-    private List<Song> song;
-
-    private List<Album> album;
-
-    private int albumcount;
-
-    public int getAlbumcount() {
-        return albumcount;
-    }
-
-    public void setAlbumcount(int albumcount) {
-        this.albumcount = albumcount;
-    }
-    public Singer() {
-    }
-
-    public String getBigimg() {
-        return bigimg;
-    }
-
-    public void setBigimg(String bigimg) {
-        this.bigimg = bigimg;
-    }
+    private String introduce;
 
     public Integer getId() {
         return id;
@@ -81,42 +55,19 @@ public class Singer {
         this.img = img == null ? null : img.trim();
     }
 
+    public String getBigimg() {
+        return bigimg;
+    }
+
+    public void setBigimg(String bigimg) {
+        this.bigimg = bigimg == null ? null : bigimg.trim();
+    }
+
     public String getIntroduce() {
         return introduce;
     }
 
     public void setIntroduce(String introduce) {
         this.introduce = introduce == null ? null : introduce.trim();
-    }
-
-    public List<Song> getSong() {
-        return song;
-    }
-
-    public void setSong(List<Song> song) {
-        this.song = song;
-    }
-
-    public List<Album> getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(List<Album> album) {
-        this.album = album;
-    }
-
-    @Override
-    public String toString() {
-        return "Singer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", sex=" + sex +
-                ", zone=" + zone +
-                ", img='" + img + '\'' +
-                ", introduce='" + introduce + '\'' +
-                ", bigimg='" + bigimg + '\'' +
-                ", song=" + song +
-                ", album=" + album +
-                '}';
     }
 }

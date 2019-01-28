@@ -1,19 +1,29 @@
 package com.he.hear.mapper;
 
-
 import com.he.hear.pojo.User;
+import com.he.hear.pojo.UserExample;
 
+import java.util.List;
+
+import com.he.hear.pojo.UserWithBLOBs;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
-    User selectUserByName(String username);/*通过用户名查询用户*/
+    long countByExample(UserExample example);
 
-    boolean insertUser(User user);/*新用户注册*/
+    int deleteByExample(UserExample example);
 
-    boolean updateMessage(User user);/*修改用户信息*/
+    int insert(UserWithBLOBs record);
 
-    boolean updatePassword(User user);//修改密码
+    int insertSelective(UserWithBLOBs record);
 
-    User selectUserById(int id);/*通过用户id查询用户*/
+    List<UserWithBLOBs> selectByExampleWithBLOBs(UserExample example);
 
+    List<User> selectByExample(UserExample example);
 
+    int updateByExampleSelective(@Param("record") UserWithBLOBs record, @Param("example") UserExample example);
+
+    int updateByExampleWithBLOBs(@Param("record") UserWithBLOBs record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 }

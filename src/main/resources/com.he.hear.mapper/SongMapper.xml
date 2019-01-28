@@ -1,122 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.he.hear.mapper.SongMapper">
-
-    <resultMap id="getSongMap" type="com.he.hear.pojo.Song">
-        <id column="id" property="id" />
-        <result column="songname" property="name" />
-        <result column="url" property="url"/>
-        <result column="duration" property="duration" />
-        <association property="album" javaType="com.he.hear.pojo.Album">
-            <result property="img" column="img"/>
-        </association>
-        <association property="singer" javaType="com.he.hear.pojo.Singer">
-            <id property="id" column="sid"/>
-            <result property="name" column="name"/>
-        </association>
-    </resultMap>
-    <!--public List<Song> newSong();//新歌榜-->
-    <select id="newSong" resultMap="getSongMap">
-        SELECT so.id as id,so.name as songname,so.url as url,so.duration as duration,s.name as name,s.id as sid,a.img as img
-        from Song as so,Singer as s,Album as a
-        where s.id=so.singer_id and so.album_id = a.id
-        order by rand()
-    </select>
-    <!--public List<Song> hotSong();//热歌榜-->
-    <select id="hotSong" resultMap="getSongMap">
-        SELECT so.id as id,so.name as songname,so.url as url,so.duration as duration,s.name as name,s.id as sid,a.img as img
-        from Song as so,Singer as s,Album as a
-        where s.id=so.singer_id and so.album_id = a.id
-        order by rand()
-        --         order by a.date DESC
-
-    </select>
-    <!--public List<Song> mySong();//原创榜-->
-    <select id="mySong" resultMap="getSongMap">
-          SELECT so.id as id,so.name as songname,so.url as url,so.duration as duration,s.name as name,s.id as sid,a.img as img
-         from Song as so,Singer as s,Album as a
-        where s.id=so.singer_id and so.album_id = a.id order by rand()
-    </select>
-
-    <resultMap id="GetSongInfoMap" type="com.he.hear.pojo.Song">
-        <id column="id" property="id" />
-        <result column="songname" property="name" />
-        <result column="url" property="url" />
-        <result column="lrc" property="lyrics"/>
-        <association property="album" javaType="com.he.hear.pojo.Album">
-            <result property="img" column="aimg"/>
-        </association>
-        <association property="singer" javaType="com.he.hear.pojo.Singer">
-            <result property="name" column="name"/>
-        </association>
-    </resultMap>
-
-    <!-- public Song selectSongById(int id);-->
-    <select id="selectSongById" parameterType="int" resultMap="GetSongInfoMap">
-        SELECT so.id as id,so.name as songname,so.url as url,so.lyrics as lrc,s.name as name,a.img as aimg from Song as so,Singer as s,Album as a
-        where s.id=so.singer_id and so.album_id = a.id and so.id=#{_parameter}
-    </select>
-    <resultMap id="getSongInfoMap" type="com.he.hear.pojo.Song">
-        <id column="songid" property="id"/>
-        <result column="name" property="name"/>
-        <result column="duration" property="duration"/>
-        <result column="url" property="url"/>
-        <association property="singer" javaType="com.he.hear.pojo.Singer">
-            <id column="id" property="id"/>
-            <result column="singername" property="name"/>
-        </association>
-        <association property="album" javaType="com.he.hear.pojo.Album">
-            <id column="id" property="id"/>
-            <result column="albumname" property="name"/>
-        </association>
-    </resultMap>
-    <!--public List<Song> selectSongBySonglistId(int id);//查询歌单里的歌曲-->
-    <select id="selectSongBySonglistId" resultMap="getSongInfoMap" parameterType="int">
-        SELECT song.id as songid,song.name as name,song.duration as duration,song.url,song.singer_id as id,singer.name as singername,song.album_id as id,album.name as albumname from song_songlist as ss,song,album,singer
-        where ss.songlist_id=#{_paramter} and ss.song_id=song.ID and song.album_id=album.id and song.singer_id=singer.ID
-    </select>
-    <resultMap id="getAlbumSongMap" type="com.he.hear.pojo.Song">
-        <id column="songid" property="id"/>
-        <result column="name" property="name"/>
-        <result column="duration" property="duration"/>
-        <result column="url" property="url"/>
-        <association property="singer" javaType="com.he.hear.pojo.Singer">
-            <id column="id" property="id"/>
-            <result column="singername" property="name"/>
-        </association>
-
-    </resultMap>
-    <!--public List<Song> selectSongByAlbumId(int id);//查询专辑里所有歌曲-->
-    <select id="selectSongByAlbumId" resultMap="getAlbumSongMap" parameterType="int">
-      SELECT song.id as songid,song.name as name,song.duration as duration,song.url as url,song.singer_id as id,singer.name as singername
-      from album,singer,song where song.singer_id=singer.id and song.album_id = #{_paramter}
-    </select>
-
-    <resultMap id="getSongInfo" type="com.he.hear.pojo.Song">
-        <id column="songid" property="id"/>
-        <result column="name" property="name"/>
-        <result column="url" property="url"/>
-        <result column="duration" property="duration"/>
-        <result column="composer" property="composer"/>
-        <result column="author" property="author"/>
-        <association property="singer" javaType="com.he.hear.pojo.Singer">
-            <id column="id" property="id"/>
-            <result column="singername" property="name"/>
-        </association>
-        <association property="album" javaType="com.he.hear.pojo.Album">
-            <id column="albumid" property="id"/>
-            <result column="albumname" property="name"/>
-            <result column="img" property="img"/>
-            <result column="company" property="company"/>
-            <result column="date" property="date"/>
-        </association>
-    </resultMap>
-
-    <!--public Song selectSongById(int id);//通过歌曲id查询歌曲信息(点击播放歌曲)-->
-    <select id="selectSongByIds" parameterType="int" resultMap="getSongInfo">
-        select s.id as songid,s.name as name,s.url as url,s.duration as duration,s.composer as composer,s.author as author,
-        i.id as id,i.name as singername,a.id as albumid,a.name as  albumname,a.img as img,a.company as company,a.date as date
-        from song as s,album as a,singer as i
-        where s.singer_id = i.id and s.album_id=a.id and s.id=#{_parameter}
-    </select>
+  <resultMap id="BaseResultMap" type="com.he.hear.pojo.Song">
+    <result column="ID" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="singer_id" jdbcType="INTEGER" property="singerId" />
+    <result column="album_id" jdbcType="INTEGER" property="albumId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="composer" jdbcType="VARCHAR" property="composer" />
+    <result column="duration" jdbcType="INTEGER" property="duration" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.he.hear.pojo.Song">
+    <result column="lyrics" jdbcType="LONGVARCHAR" property="lyrics" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, name, singer_id, album_id, url, author, composer, duration
+  </sql>
+  <sql id="Blob_Column_List">
+    lyrics
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.he.hear.pojo.SongExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from song
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.he.hear.pojo.SongExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from song
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.he.hear.pojo.SongExample">
+    delete from song
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.he.hear.pojo.Song">
+    insert into song (ID, name, singer_id, 
+      album_id, url, author, 
+      composer, duration, lyrics
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{singerId,jdbcType=INTEGER}, 
+      #{albumId,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{composer,jdbcType=VARCHAR}, #{duration,jdbcType=INTEGER}, #{lyrics,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.he.hear.pojo.Song">
+    insert into song
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="singerId != null">
+        singer_id,
+      </if>
+      <if test="albumId != null">
+        album_id,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="composer != null">
+        composer,
+      </if>
+      <if test="duration != null">
+        duration,
+      </if>
+      <if test="lyrics != null">
+        lyrics,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="singerId != null">
+        #{singerId,jdbcType=INTEGER},
+      </if>
+      <if test="albumId != null">
+        #{albumId,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="composer != null">
+        #{composer,jdbcType=VARCHAR},
+      </if>
+      <if test="duration != null">
+        #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="lyrics != null">
+        #{lyrics,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.he.hear.pojo.SongExample" resultType="java.lang.Long">
+    select count(*) from song
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update song
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.singerId != null">
+        singer_id = #{record.singerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.albumId != null">
+        album_id = #{record.albumId,jdbcType=INTEGER},
+      </if>
+      <if test="record.url != null">
+        url = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.author != null">
+        author = #{record.author,jdbcType=VARCHAR},
+      </if>
+      <if test="record.composer != null">
+        composer = #{record.composer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.duration != null">
+        duration = #{record.duration,jdbcType=INTEGER},
+      </if>
+      <if test="record.lyrics != null">
+        lyrics = #{record.lyrics,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update song
+    set ID = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      singer_id = #{record.singerId,jdbcType=INTEGER},
+      album_id = #{record.albumId,jdbcType=INTEGER},
+      url = #{record.url,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      composer = #{record.composer,jdbcType=VARCHAR},
+      duration = #{record.duration,jdbcType=INTEGER},
+      lyrics = #{record.lyrics,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update song
+    set ID = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      singer_id = #{record.singerId,jdbcType=INTEGER},
+      album_id = #{record.albumId,jdbcType=INTEGER},
+      url = #{record.url,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      composer = #{record.composer,jdbcType=VARCHAR},
+      duration = #{record.duration,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
 </mapper>

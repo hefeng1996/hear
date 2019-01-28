@@ -1,59 +1,25 @@
 package com.he.hear.pojo;
 
-
 import java.util.Date;
-//评论
+
 public class Comments {
-    private Integer id;//ID
+    private Integer id;
 
-    private Comments upperComment;//上一级用户
+    private Integer upperid;
 
-    private String content;//内容
+    private String content;
 
-    private User user2;//用户
+    private Integer userId;
 
-    private Date time;//
+    private Date time;
 
-    private Song song;
+    private Integer songId;
 
-    private Album album;
-    private Integer albumid;
-    private Integer songlistid;
-    private Integer songid;
+    private Integer albumId;
 
-    public Integer getAlbumid() {
-        return albumid;
-    }
+    private Integer momentId;
 
-    public void setAlbumid(Integer albumid) {
-        this.albumid = albumid;
-    }
-
-    public Integer getSonglistid() {
-        return songlistid;
-    }
-
-    public void setSonglistid(Integer songlistid) {
-        this.songlistid = songlistid;
-    }
-
-    public Integer getSongid() {
-        return songid;
-    }
-
-    public void setSongid(Integer songid) {
-        this.songid = songid;
-    }
-
-    public Integer getMomentid() {
-        return momentid;
-    }
-
-    public void setMomentid(Integer momentid) {
-        this.momentid = momentid;
-    }
-
-    private Integer momentid;
+    private Integer songlistId;
 
     public Integer getId() {
         return id;
@@ -63,36 +29,12 @@ public class Comments {
         this.id = id;
     }
 
-    public Comments getUpperComment() {
-        return upperComment;
+    public Integer getUpperid() {
+        return upperid;
     }
 
-    public void setUpperComment(Comments upperComment) {
-        this.upperComment = upperComment;
-    }
-
-    public User getUser2() {
-        return user2;
-    }
-
-    public void setUser2(User user2) {
-        this.user2 = user2;
-    }
-
-    public Song getSong() {
-        return song;
-    }
-
-    public void setSong(Song song) {
-        this.song = song;
-    }
-
-    public Album getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(Album album) {
-        this.album = album;
+    public void setUpperid(Integer upperid) {
+        this.upperid = upperid;
     }
 
     public String getContent() {
@@ -103,7 +45,13 @@ public class Comments {
         this.content = content == null ? null : content.trim();
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
 
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
     public Date getTime() {
         return time;
@@ -113,5 +61,35 @@ public class Comments {
         this.time = time;
     }
 
+    public Integer getSongId() {
+        return songId;
+    }
 
+    public void setSongId(Integer songId) {
+        this.songId = songId;
+    }
+
+    public Integer getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(Integer albumId) {
+        this.albumId = albumId;
+    }
+
+    public Integer getMomentId() {
+        return momentId;
+    }
+
+    public void setMomentId(Integer momentId) {
+        this.momentId = momentId;
+    }
+
+    public Integer getSonglistId() {
+        return songlistId;
+    }
+
+    public void setSonglistId(Integer songlistId) {
+        this.songlistId = songlistId;
+    }
 }

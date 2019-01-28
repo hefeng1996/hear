@@ -1,29 +1,22 @@
 package com.he.hear.mapper;
 
-
-import com.he.hear.pojo.Comments;
 import com.he.hear.pojo.Moment;
-
+import com.he.hear.pojo.MomentExample;
 import java.util.List;
-
+import org.apache.ibatis.annotations.Param;
 
 public interface MomentMapper {
-    List<Moment> selectMomentsByUserId(int id);//G
-    List<Moment> selectMyMomentsByMyId(int myId);//Y
-    List<Moment> selectAllMomentsByMyId(int myId);//Y
-    List<Comments> selectCommentsByMonentId(int mId);//Y
-    boolean insertMoment(Moment moment);//Y
-    boolean insertComment(Comments comments);//Y
-    Comments selectUpperCommentByComentId(int cId);//Y
-    boolean insertAnswer(Comments comments);//Y
+    long countByExample(MomentExample example);
 
+    int deleteByExample(MomentExample example);
 
-    //    根据动态的id删除下面所有评论
-    boolean deleteComentByMomentId(int cId);
-    //    根据动态的id删除动态
-    boolean deleteMomentByMomentId(int mId);
-    //    根据评论的id删除评论
-    boolean deleteCommentByCommnetId(int cid);
+    int insert(Moment record);
 
+    int insertSelective(Moment record);
 
+    List<Moment> selectByExample(MomentExample example);
+
+    int updateByExampleSelective(@Param("record") Moment record, @Param("example") MomentExample example);
+
+    int updateByExample(@Param("record") Moment record, @Param("example") MomentExample example);
 }

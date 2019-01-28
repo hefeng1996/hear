@@ -3,30 +3,11 @@ package com.he.hear.pojo;
 public class Relation {
     private Integer id;
 
-    private User user;
+    private Integer userId;
 
-    private User userbyId;//关注人的ID
+    private Integer userbyId;
 
     private Integer status;
-
-    private Integer user_id;
-    private Integer userBy_id;
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
-
-    public Integer getUserBy_id() {
-        return userBy_id;
-    }
-
-    public void setUserBy_id(Integer userBy_id) {
-        this.userBy_id = userBy_id;
-    }
 
     public Integer getId() {
         return id;
@@ -36,19 +17,19 @@ public class Relation {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public User getUserbyId() {
+    public Integer getUserbyId() {
         return userbyId;
     }
 
-    public void setUserbyId(User userbyId) {
+    public void setUserbyId(Integer userbyId) {
         this.userbyId = userbyId;
     }
 

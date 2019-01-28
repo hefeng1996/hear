@@ -5,9 +5,9 @@ public class Song {
 
     private String name;
 
-    private Singer singer;
+    private Integer singerId;
 
-    private Album album;
+    private Integer albumId;
 
     private String url;
 
@@ -18,20 +18,6 @@ public class Song {
     private Integer duration;
 
     private String lyrics;
-    private Integer isvip;
-    private Integer quality;
-    private String time;
-
-    public String getTime() {
-        if (this.duration!=null) {
-            return this.duration / 100 + ":" + this.duration / 10 % 10 + this.duration % 10;
-        }else{
-            return "0:00";
-        }
-    }
-
-    public Song() {
-    }
 
     public Integer getId() {
         return id;
@@ -46,39 +32,23 @@ public class Song {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
-    public Singer getSinger() {
-        return singer;
+    public Integer getSingerId() {
+        return singerId;
     }
 
-    public Integer getIsvip() {
-        return isvip;
+    public void setSingerId(Integer singerId) {
+        this.singerId = singerId;
     }
 
-    public void setIsvip(Integer isvip) {
-        this.isvip = isvip;
+    public Integer getAlbumId() {
+        return albumId;
     }
 
-    public Integer getQuality() {
-        return quality;
-    }
-
-    public void setQuality(Integer quality) {
-        this.quality = quality;
-    }
-
-    public void setSinger(Singer singer) {
-        this.singer = singer;
-    }
-
-    public Album getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(Album album) {
-        this.album = album;
+    public void setAlbumId(Integer albumId) {
+        this.albumId = albumId;
     }
 
     public String getUrl() {
@@ -119,23 +89,5 @@ public class Song {
 
     public void setLyrics(String lyrics) {
         this.lyrics = lyrics == null ? null : lyrics.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "Song{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", singer=" + singer +
-                ", album=" + album +
-                ", url='" + url + '\'' +
-                ", author='" + author + '\'' +
-                ", composer='" + composer + '\'' +
-                ", duration=" + duration +
-                ", lyrics='" + lyrics + '\'' +
-                ", isvip=" + isvip +
-                ", quality=" + quality +
-                ", time='" + time + '\'' +
-                '}';
     }
 }

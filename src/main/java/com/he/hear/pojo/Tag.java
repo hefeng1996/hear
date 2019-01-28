@@ -7,7 +7,6 @@ public class Tag {
 
     private Integer type;
 
-
     public Integer getId() {
         return id;
     }

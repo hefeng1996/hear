@@ -8503,7 +8503,7 @@
 			// Extract dataTypes list
 			s.dataTypes = jQuery.trim( s.dataType || "*" ).toLowerCase().match( rnotwhite ) || [ "" ];
 
-			// A cross-domain request is in order when the origin doesn't match the current origin.
+			// A cross-pojo request is in order when the origin doesn't match the current origin.
 			if ( s.crossDomain == null ) {
 				urlAnchor = document.createElement( "a" );
 
@@ -9054,7 +9054,7 @@
 	jQuery.ajaxTransport( function( options ) {
 		var callback, errorCallback;
 
-		// Cross domain only allowed if supported through XMLHttpRequest
+		// Cross pojo only allowed if supported through XMLHttpRequest
 		if ( support.cors || xhrSupported && !options.crossDomain ) {
 			return {
 				send: function( headers, complete ) {
@@ -9082,10 +9082,10 @@
 					}
 
 					// X-Requested-With header
-					// For cross-domain requests, seeing as conditions for a preflight are
+					// For cross-pojo requests, seeing as conditions for a preflight are
 					// akin to a jigsaw puzzle, we simply never set it to be sure.
 					// (it can always be set on a per-request basis or even using ajaxSetup)
-					// For same-domain requests, won't change header if already provided.
+					// For same-pojo requests, won't change header if already provided.
 					if ( !options.crossDomain && !headers[ "X-Requested-With" ] ) {
 						headers[ "X-Requested-With" ] = "XMLHttpRequest";
 					}
@@ -9224,7 +9224,7 @@
 // Bind script tag hack transport
 	jQuery.ajaxTransport( "script", function( s ) {
 
-		// This transport only deals with cross domain requests
+		// This transport only deals with cross pojo requests
 		if ( s.crossDomain ) {
 			var script, callback;
 			return {

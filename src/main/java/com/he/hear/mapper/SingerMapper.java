@@ -1,36 +1,26 @@
 package com.he.hear.mapper;
 
-
 import com.he.hear.pojo.Singer;
-
+import com.he.hear.pojo.SingerExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface SingerMapper {
-    List<Singer> selectSinger();
+    long countByExample(SingerExample example);
 
-    List<Singer> selectMySinger1();
+    int deleteByExample(SingerExample example);
 
-    List<Singer> selectMySinger2();
+    int insert(Singer record);
 
-    List<Singer> selectChMaleSinger();
+    int insertSelective(Singer record);
 
-    List<Singer> selectChFemaleSinger();
+    List<Singer> selectByExampleWithBLOBs(SingerExample example);
 
-    List<Singer> selectChBand();
+    List<Singer> selectByExample(SingerExample example);
 
-    List<Singer> selectEngMaleSinger();
+    int updateByExampleSelective(@Param("record") Singer record, @Param("example") SingerExample example);
 
-    List<Singer> selectEngFemaleSinger();
+    int updateByExampleWithBLOBs(@Param("record") Singer record, @Param("example") SingerExample example);
 
-    List<Singer> selectEngBand();
-
-    List<Singer> selectJkMaleSinger();
-
-    List<Singer> selectJkFemaleSinger();
-
-    List<Singer> selectJkBand();
-
-    Singer selectSingerhost(int id);
-
-    List<Singer> selectSimliarSinger(int id);
+    int updateByExample(@Param("record") Singer record, @Param("example") SingerExample example);
 }

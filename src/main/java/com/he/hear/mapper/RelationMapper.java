@@ -1,26 +1,22 @@
 package com.he.hear.mapper;
 
-
 import com.he.hear.pojo.Relation;
-
+import com.he.hear.pojo.RelationExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface RelationMapper {
-    List<Relation> selectRelationByUserId13(int id);
-    List<Relation> selectRelationByUserId23(int id);
+    long countByExample(RelationExample example);
 
-    List<Relation> selectRelationByAll(int userId, int userById);
-    boolean removeRelation(int userId, int userById);
+    int deleteByExample(RelationExample example);
 
-    boolean addRelatonById(int userId, int userById);
+    int insert(Relation record);
 
+    int insertSelective(Relation record);
 
-    List<Relation> selectFansByUserId23(int id);
-    boolean updateAttention(int userid, int id);
-    boolean updateAttentionByuserbyid(int userbyid, int id);
+    List<Relation> selectByExample(RelationExample example);
 
-    List<Relation> selectAttentionByUserId13(int id);
-    boolean updateremoveAttention(int userid, int id);
-    boolean updateremoveAttentionByuserbyid(int userbyid, int id);
+    int updateByExampleSelective(@Param("record") Relation record, @Param("example") RelationExample example);
 
+    int updateByExample(@Param("record") Relation record, @Param("example") RelationExample example);
 }
