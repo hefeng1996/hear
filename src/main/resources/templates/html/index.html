@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>MPlayer音乐播放器</title>
-    <link rel="stylesheet" th:href="@{/css/mplayer.css}" type="text/css" media="all"/>
     <link rel="stylesheet" th:href="@{/css/component.css}" type="text/css" media="all"/>
     <!--公共样式-->
     <link rel="stylesheet" th:href="@{/css/style.css}" />
@@ -11,9 +10,6 @@
     <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
 
     <style>
-        .menu__item_current {
-            border: 2px solid #d94f5c;
-        }
         .thumbnail div > img {
             margin-right: auto;
             margin-left: auto;
@@ -45,32 +41,7 @@
     </style>
 </head>
 <body>
-<!--导航栏-->
-<div class="container" style="height: 70px; width: 100%; margin: 0;padding: 0;">
-    <nav class="nav menu menu--miranda" style="background-color:#000000;height: 70px;">
-        <div class="row">
-            <div class="col-md-2"><img href="#" id="logo" th:src="@{/img/logo.png}"/></div>
-            <div class="col-md-1"><span class="menu__item"><a class="menu__link menu__item_current">推荐</a></span></div>
-            <div class="col-md-1"><span class="menu__item"><a class="menu__link">排行榜</a></span></div>
-            <div class="col-md-1"><span class="menu__item"><a class="menu__link">歌单</a></span></div>
-            <div class="col-md-1"><span class="menu__item"><a class="menu__link">歌手</a></span></div>
-            <div class="col-md-1"><span class="menu__item"><a class="menu__link">我的音乐</a></span></div>
-            <div class="col-md-1"><span class="menu__item"><a class="menu__link">朋友</a></span></div>
-            <div class="col-md-2 search d7">
-                <form th:action="@{/search/searchall.action}" method="get">
-                    <input type="text" placeholder="Hear..." name="content">
-                    <button type="submit"><img th:src="@{/img/1.jpg}" style="position: relative;left: -6px"/></button>
-                </form>
-            </div>
-            <div class="col-md-2">
-				<span class="menu__item">
-				<a href="#" class="menu__link" onclick="">登录</a>
-				</span>
-            </div>
-        </div>
 
-    </nav>
-</div>
 
 <div style="background-color: #d94f5c;height: 20px;"></div>
 <div class="container">
@@ -116,9 +87,12 @@
                         <div href="#" class="thumbnail">
                             <!--<img th:src="'@{/upload/}'+'img/head/林俊杰.jpg'" alt="...">-->
                             <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">-->
-                            <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">-->
-                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" style="height: 140px;width: 140px" alt="...">
+                            <!--<img th:src="@{/img/demo.jpg}" alt="...">-->
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div>
+                            <span>江南</span>
                         </div>
 
                     </div>
@@ -127,17 +101,36 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        <div>
+                            <span>江南</span>
                         </div>
                     </div>
                     <div class="col-md-3 mb-2">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div>
+                            <span>江南</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div>
+                            <span>江南</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div>
+                            <span>江南</span>
                         </div>
                     </div>
 
@@ -146,12 +139,8 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                    </div>
-
-                    <div class="col-md-3 mb-2">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        <div>
+                            <span>江南</span>
                         </div>
                     </div>
 
@@ -159,6 +148,9 @@
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div>
+                            <span>江南</span>
                         </div>
                     </div>
 
@@ -166,6 +158,9 @@
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div>
+                            <span>江南</span>
                         </div>
                     </div>
 
@@ -187,22 +182,35 @@
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
+                        <div>
+                            <span>江南</span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
+                        <div>
+                            <span>江南</span>
+                        </div>
                     </div>
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
+                        <div>
+                            <span>江南</span>
+                        </div>
                     </div>
+                    <div class="col-md-3">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                        </div>
+                        <div>
+                            <span>江南</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -243,56 +251,13 @@
 
 </div>
 
-<div class="mp">
-    <div class="mp-box">
-        <img th:src="@{/img/mplayer_error.png}" alt="music cover" class="mp-cover">
-        <div class="mp-info">
-            <p class="mp-name">燕归巢</p>
-            <p class="mp-singer">许嵩</p>
-            <p><span class="mp-time-current">00:00</span>/<span class="mp-time-all">00:00</span></p>
-        </div>
-        <div class="mp-btn">
-            <button class="mp-prev" title="上一首"></button>
-            <button class="mp-pause" title="播放"></button>
-            <button class="mp-next" title="下一首"></button>
-            <button class="mp-mode" title="播放模式"></button>
-            <div class="mp-vol">
-                <button class="mp-vol-img" title="静音"></button>
-                <div class="mp-vol-range" data-range_min="0" data-range_max="100" data-cur_min="80">
-                    <div class="mp-vol-current"></div>
-                    <div class="mp-vol-circle"></div>
-                </div>
-            </div>
-        </div>
-        <div class="mp-pro">
-            <div class="mp-pro-current"></div>
-        </div>
-        <div class="mp-menu">
-            <button class="mp-list-toggle"></button>
-            <button class="mp-lrc-toggle"></button>
-        </div>
-    </div>
-    <button class="mp-toggle">
-        <span class="mp-toggle-img"></span>
-    </button>
-    <div class="mp-lrc-box">
-        <ul class="mp-lrc"></ul>
-    </div>
-    <button class="mp-lrc-close"></button>
-    <div class="mp-list-box">
-        <ul class="mp-list-title"></ul>
-        <table class="mp-list-table">
-            <thead>
-            <tr>
-                <th>歌名</th>
-                <th>歌手</th>
-                <th>时长</th>
-            </tr>
-            </thead>
-            <tbody class="mp-list"></tbody>
-        </table>
-    </div>
-</div>
-
 </body>
+<script th:src="@{/bootstrap/jquery.js}"></script>
+<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+
+<script th:inline="javascript">
+    $(function(){
+        $('#myCarousel').carousel({interval:5000});
+    })
+</script>
 </html>

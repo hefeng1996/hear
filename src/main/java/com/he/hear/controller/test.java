@@ -12,6 +12,14 @@ public class test{
         return "html/hear";
     }
 
+    @RequestMapping("index")
+    public String index(){
+        return "html/index";
+    }
 
+    @RequestMapping("index1")
+    public String index1(){
+        return "html/index1";
+    }
 
 }
