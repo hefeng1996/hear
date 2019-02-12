@@ -424,3 +424,17 @@ label.error{display: block; -webkit-transition: border-color .15s ease-in-out,bo
 .mx-auto {
     margin-left: auto !important;
 }
+
+.play{
+    content:icon;
+    icon: url("static/images/play.png");
+    width: 20px;
+    height: 20px;
+}
+
+.listen{
+    content:icon;
+    icon: url("../images/listen.png");
+    width: 20px;
+    height: 20px;
+}

@@ -21,11 +21,13 @@
         }
         .thumbnail  {
             padding: 0;
+            margin: 0;
+            width: 145px;
+            height: 148px;
         }
         .thumbnail {
             display: block;
-            padding: 4px;
-            margin-bottom: 20px;
+            /*margin-bottom: 20px;*/
             line-height: 1.42857143;
             background-color: #fff;
             border: 1px solid #ddd;
@@ -38,6 +40,30 @@
             font-size: 1.5em;
             color: #555555;
         }
+        .Info{
+            position: relative;
+            left: 1px;
+            top: -15px;
+            color: white;
+            background-color: #999999;
+            width: 140px;
+        }
+        .listen{
+            position: relative;
+            left: -25%;
+        }
+        .Img-15{
+            width: 15px;
+            height: 15px;
+        }
+        .play{
+            position:absolute;
+            right: 1px;
+        }
+        .play:hover{
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -84,12 +110,13 @@
                 <!--歌单-->
                 <div class="row">
                     <div class="col-md-3 mb-2">
-                        <div href="#" class="thumbnail">
-                            <!--<img th:src="'@{/upload/}'+'img/head/林俊杰.jpg'" alt="...">-->
-                            <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" alt="...">-->
+                        <div href="#" class="thumbnail" style="">
                             <img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" style="height: 140px;width: 140px" alt="...">
                             <!--<img th:src="@{/img/demo.jpg}" alt="...">-->
-                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                            <div class="Info" >
+                            <span class="listen"><img class="Img-15" th:src="@{/images/listen.png}">  22222</span>
+                                <span class="play" ><img class="Img-15" th:src="@{/images/play.png}" alt=""></span>
+                            </div>
                         </div>
                         <div>
                             <span>江南</span>
@@ -224,7 +251,18 @@
                         <div>
                             <img th:src="@{/img/rege.jpg}" alt="热歌榜">
                         </div>
-
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
                     </div>
                     <div class="col-md-4">
                         <div>

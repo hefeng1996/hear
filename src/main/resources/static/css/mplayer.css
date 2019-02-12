@@ -136,7 +136,7 @@
 }
 /* line 127, mplayer.less */
 .mp .mp-lrc-close:hover {
-  background-position-x: -7px;
+  /*background-position-x: -7px;*/
 }
 /* line 131, mplayer.less */
 .mp .mp-menu {
@@ -153,8 +153,8 @@
 }
 /* line 141, mplayer.less */
 .mp .mp-list-toggle:hover {
-  background-position-x: -50px;
-}
+   /*background-position-x: -50px;*/
+ }
 /* line 145, mplayer.less */
 .mp .mp-lrc-toggle {
   width: 14px;
@@ -165,7 +165,7 @@
 }
 /* line 151, mplayer.less */
 .mp .mp-lrc-toggle:hover {
-  background-position-y: -70px;
+  /*background-position-y: -70px;*/
 }
 /* line 155, mplayer.less */
 .mp .mp-pro {
@@ -202,7 +202,7 @@
 /* line 181, mplayer.less */
 .mp .mp-prev:hover,
 .mp .mp-next:hover {
-  background-position-y: -28px;
+  /*background-position-y: -28px;*/
 }
 /* line 185, mplayer.less */
 .mp .mp-prev {
@@ -224,7 +224,7 @@
 }
 /* line 199, mplayer.less */
 .mp .mp-pause:hover {
-  background-position-y: -45px;
+  /*background-position-y: -45px;*/
 }
 /* line 203, mplayer.less */
 .mp .mp-play {
@@ -241,7 +241,7 @@
 }
 /* line 213, mplayer.less */
 .mp .mp-mode:hover {
-  background-position-y: -126px;
+  /*background-position-y: -126px;*/
 }
 /* line 217, mplayer.less */
 .mp .mp-mode-0 {
@@ -274,7 +274,7 @@
 }
 /* line 239, mplayer.less */
 .mp .mp-vol-img:hover {
-  background-position-y: -84px;
+  /*background-position-y: -84px;*/
 }
 /* line 243, mplayer.less */
 .mp .mp-mute {
@@ -282,7 +282,7 @@
 }
 /* line 245, mplayer.less */
 .mp .mp-mute:hover {
-  background-position: -149px -126px;
+  /*background-position: -149px -126px;*/
 }
 /* line 249, mplayer.less */
 .mp .mp-vol-range {
@@ -337,7 +337,7 @@
 }
 /* line 292, mplayer.less */
 .mp .mp-toggle:hover {
-  background-position-x: -149px;
+  /*background-position-x: -149px;*/
 }
 /* line 296, mplayer.less */
 .mp .mp-toggle-img {
