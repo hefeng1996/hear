@@ -47,6 +47,7 @@ var mplayer_song = [[
 		"singer":"邓紫棋",
 		"img":"http://imgcache.qq.com/music/photo/album_500/51/500_albumpic_1796451_0.jpg",
 		"src":hearPath()+"/song/G.E.M.邓紫棋-穿越火线.mp3",
+		"time":"03:16",
 		"lrc":"[00:00.63]穿越火线 - G.E.M.邓紫棋\n" +
 			"[00:01.18]作词：G.E.M. 邓紫棋&汪苏泷\n" +
 			"[00:01.61]作曲：汪苏泷&G.E.M. 邓紫棋\n" +

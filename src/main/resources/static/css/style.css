@@ -427,7 +427,7 @@ label.error{display: block; -webkit-transition: border-color .15s ease-in-out,bo
 
 .play{
     content:icon;
-    icon: url("static/images/play.png");
+    icon: url("../images/play.png");
     width: 20px;
     height: 20px;
 }
@@ -438,3 +438,98 @@ label.error{display: block; -webkit-transition: border-color .15s ease-in-out,bo
     width: 20px;
     height: 20px;
 }
+.thumbnail div > img {
+    margin-right: auto;
+    margin-left: auto;
+}
+div.thumbnail:hover,
+div.thumbnail:focus,
+div.thumbnail.active {
+    border-color: #337ab7;
+}
+.thumbnail  {
+    padding: 0;
+    margin: 0;
+    width: 145px;
+    height: 148px;
+}
+.thumbnail {
+    display: block;
+    /*margin-bottom: 20px;*/
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+.bandan{
+    font-size: 1.5em;
+    color: #555555;
+}
+.Info{
+    position: relative;
+    left: -4px;
+    top: -18px;
+    color: white;
+    background-color: #999999;
+    width: 143px;
+}
+.listen{
+    position: relative;
+    left: -25%;
+}
+.Img-15{
+    width: 15px;
+    height: 15px;
+}
+.play{
+    position:absolute;
+    right: 1px;
+}
+.play:hover{
+    cursor: pointer;
+}
+.songTitle{
+    width: 140px;
+}
+
+.oper{
+    display: block;
+    float: right;
+    width: 82px;
+    /*margin-top: 7px;*/
+}
+.dis{
+    display: block;
+}
+.listPlay .listAdd .listCollection{
+    width: 12px;
+    height: 12px;
+}
+.listPlay{
+    background: url(../images/Play00.png) no-repeat 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.listAdd{
+    background: url(../images/add.png) no-repeat 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.listCollection{
+    background: url(../images/Collection1.png) no-repeat 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+a{color:#000000}
+a:link{color:#000000}
+a:hover{color:#000000}
+a:visited{
+    color:#000000
+}
+
+

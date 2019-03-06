@@ -1,13 +1,14 @@
 package com.he.hear.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/test")
+@RequestMapping("/")
 @Controller
-public class test{
+public class Hear {
 
-    @RequestMapping("/hear")
+    @RequestMapping("/")
     public String hear(){
         return "html/hear";
     }
@@ -26,6 +27,11 @@ public class test{
     @RequestMapping("/login")
     public String login(){
         return "html/login";
+    }
+
+    @RequestMapping("/bangdan")
+    public String bangdan(){
+        return "html/bangdan";
     }
 
 }

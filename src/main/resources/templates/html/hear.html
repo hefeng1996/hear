@@ -61,7 +61,7 @@
     </nav>
 </div>
 
-<iframe id="main_iframe" th:src="@{/test/index}" scrolling="auto">
+<iframe id="main_iframe" th:src="@{/index}" scrolling="auto">
 
 </iframe>
 
@@ -144,7 +144,7 @@
                jQuery("#"+premain).removeClass("menu__item_current");
                jQuery("#"+nextmain).addClass("menu__item_current");
                console.log(pre);
-               $("#main_iframe").attr("src",contextPath+"/test/index");
+               $("#main_iframe").attr("src",contextPath+"/index");
                pre=0;
            }
        });
@@ -154,7 +154,7 @@
                 var nextmain=ind[1];
                 jQuery("#"+premain).removeClass("menu__item_current");
                 jQuery("#"+nextmain).addClass("menu__item_current");
-                $("#main_iframe").attr("src",contextPath+"/test/index1");
+                $("#main_iframe").attr("src",contextPath+"/bangdan");
                 console.log(pre);
                 pre=1;
             }
@@ -204,7 +204,9 @@
             }
         });
         jQuery("#MainLogin").click(function () {
-                $("#main_iframe").attr("src",contextPath+"/test/login");
+                // $("#main_iframe").attr("src",contextPath+"/test/login");
+            window.parent.location.href=contextPath+"/login";
+                // $("#main_iframe").attr("src",);
         });
 
     });

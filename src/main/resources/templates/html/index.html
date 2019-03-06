@@ -10,58 +10,13 @@
     <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
 
     <style>
-        .thumbnail div > img {
-            margin-right: auto;
-            margin-left: auto;
-        }
-        div.thumbnail:hover,
-        div.thumbnail:focus,
-        div.thumbnail.active {
-            border-color: #337ab7;
-        }
-        .thumbnail  {
-            padding: 0;
-            margin: 0;
-            width: 145px;
-            height: 148px;
-        }
-        .thumbnail {
-            display: block;
-            /*margin-bottom: 20px;*/
-            line-height: 1.42857143;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            -webkit-transition: border .2s ease-in-out;
-            -o-transition: border .2s ease-in-out;
-            transition: border .2s ease-in-out;
-        }
-        .bandan{
-            font-size: 1.5em;
-            color: #555555;
-        }
-        .Info{
+        .banUl{
+            text-align: left;
             position: relative;
-            left: 1px;
-            top: -15px;
-            color: white;
+            /*left: 21%;*/
+        }
+        .backg{
             background-color: #999999;
-            width: 140px;
-        }
-        .listen{
-            position: relative;
-            left: -25%;
-        }
-        .Img-15{
-            width: 15px;
-            height: 15px;
-        }
-        .play{
-            position:absolute;
-            right: 1px;
-        }
-        .play:hover{
-            cursor: pointer;
         }
 
     </style>
@@ -80,7 +35,7 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <!-- 轮播（Carousel）项目 -->
-        <div class="carousel-inner">
+        <div class="carousel-inner mb-3">
             <div class="item active">
                 <img th:src="@{/img/17.jpg}" alt="First slide"/>
             </div>
@@ -118,7 +73,7 @@
                                 <span class="play" ><img class="Img-15" th:src="@{/images/play.png}" alt=""></span>
                             </div>
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
 
@@ -128,7 +83,7 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -137,7 +92,7 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -146,17 +101,7 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                        <div>
-                            <span>江南</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 mb-2">
-                        <div href="#" class="thumbnail">
-                            <img th:src="@{/img/demo.jpg}" alt="...">
-                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
-                        </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -166,7 +111,7 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -176,7 +121,17 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                        <div>
+                        <div class="songTitle">
+                            <span>江南</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div href="#" class="thumbnail">
+                            <img th:src="@{/img/demo.jpg}" alt="...">
+                            <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
+                        </div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -186,7 +141,7 @@
                             <img th:src="@{/img/demo.jpg}" alt="...">
                             <span style="color: #ffffff;position: relative;top: -20px;left: 8%;">播放次数:22222</span><span></span>
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -199,17 +154,17 @@
             </div>
 
 
-            <div class="mb-2">
+            <div class="mb-3">
                 <span class="bandan ">热门专辑</span>
             </div>
             <!--专辑-->
-            <div class="mb-2">
+            <div class="mb-3">
                 <div class="row">
                     <div class="col-md-3">
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -217,7 +172,7 @@
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -225,7 +180,7 @@
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -233,7 +188,7 @@
                         <div href="#" class="thumbnail">
                             <img th:src="@{/img/demo.jpg}" alt="...">
                         </div>
-                        <div>
+                        <div class="songTitle">
                             <span>江南</span>
                         </div>
                     </div>
@@ -241,47 +196,208 @@
                 </div>
             </div>
 
-            <div class="mb-2">
+            <div class="mb-3">
                 <span class="bandan ">热门单曲</span>
             </div>
             <!--单曲（排行榜）-->
-            <div class="mb-2">
+            <div class="mb-3">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div>
-                            <img th:src="@{/img/rege.jpg}" alt="热歌榜">
+                    <div class="col-md-4 row">
+                        <div class="mb-3 col-md-8">
+                            <img th:src="@{/img/rege.jpg}" style="height: 152px;" alt="热歌榜">
                         </div>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <div>
-                            <img th:src="@{/img/xinge.jpg}" alt="新歌版">
+                        <div class="col-md-2" style="margin-top: 62px">
+                            <a href="" title="播放列表"><img th:src="@{/images/Play00.png}" style="width: 18px;height: 18px;" alt="" ></a>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div>
-                            <img th:src="@{/img/yuanchuang.jpg}" alt="原创版">
+                        <div class="col-md-2" style="margin-top: 62px">
+                            <a href="" title="加入列表"><img th:src="@{/images/Collection1.png}" style="width: 18px;height: 18px;margin-left: -20px;" alt="" ></a>
                         </div>
 
+                        <table class="table table-hover table-striped">
+                            <tr>
+                                <td>
+                                    <a href="" title="邓紫棋-穿越火线">邓紫棋-穿越火线</a>
+                                    <div class="oper">
+                                        <a href="javascript:void(0)" class="listPlay" title="播放" > <img class="listPlay" th:src="@{/images/Play00.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="添加到播放列表" ><img class="listAdd" th:src="@{/images/add.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="收藏"><img class="listCollection" th:src="@{/images/Collection1.png}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" title="邓紫棋-穿越火线">邓紫棋-穿越火线</a>
+                                    <div class="oper">
+                                        <a href="javascript:void(0)" class="listPlay" title="播放" > <img class="listPlay" th:src="@{/images/Play00.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="添加到播放列表" ><img class="listAdd" th:src="@{/images/add.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="收藏"><img class="listCollection" th:src="@{/images/Collection1.png}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr style="text-align: right">
+                                <td><a href="">查看全部></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-4 row">
+                        <div class="mb-3 col-md-8">
+                            <img th:src="@{/img/xinge.jpg}"  style="height: 152px;" alt="新歌榜">
+                        </div>
+                        <div class="col-md-2" style="margin-top: 62px">
+                            <a href="" title="播放列表"><img th:src="@{/images/Play00.png}" style="width: 18px;height: 18px;" alt="" ></a>
+                        </div>
+                        <div class="col-md-2" style="margin-top: 62px">
+                            <a href="" title="加入列表"><img th:src="@{/images/Collection1.png}" style="width: 18px;height: 18px;margin-left: -20px;" alt="" ></a>
+                        </div>
+
+                        <table class="table table-hover table-striped">
+                            <tr>
+                                <td>
+                                    <a href="" title="邓紫棋-穿越火线">邓紫棋-穿越火线</a>
+                                    <div class="oper">
+                                        <a href="javascript:void(0)" class="listPlay" title="播放" > <img class="listPlay" th:src="@{/images/Play00.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="添加到播放列表" ><img class="listAdd" th:src="@{/images/add.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="收藏"><img class="listCollection" th:src="@{/images/Collection1.png}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" title="邓紫棋-穿越火线">邓紫棋-穿越火线</a>
+                                    <div class="oper">
+                                        <a href="javascript:void(0)" class="listPlay" title="播放" > <img class="listPlay" th:src="@{/images/Play00.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="添加到播放列表" ><img class="listAdd" th:src="@{/images/add.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="收藏"><img class="listCollection" th:src="@{/images/Collection1.png}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr style="text-align: right">
+                                <td><a href="">查看全部></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-4 row">
+                        <div class="mb-3 col-md-8">
+                            <img th:src="@{/img/yuanchuang.jpg}"  style="height: 152px;" alt="原创版">
+                        </div>
+                        <div class="col-md-2" style="margin-top: 62px">
+                            <a href="" title="播放列表"><img th:src="@{/images/Play00.png}" style="width: 18px;height: 18px;" alt="" ></a>
+                        </div>
+                        <div class="col-md-2" style="margin-top: 62px">
+                            <a href="" title="加入列表"><img th:src="@{/images/Collection1.png}" style="width: 18px;height: 18px;margin-left: -20px;" alt="" ></a>
+                        </div>
+
+                        <table class="table table-hover table-striped">
+                            <tr>
+                                <td>
+                                    <a href="" title="邓紫棋-穿越火线">邓紫棋-穿越火线</a>
+                                    <div class="oper">
+                                        <a href="javascript:void(0)" class="listPlay" title="播放" > <img class="listPlay" th:src="@{/images/Play00.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="添加到播放列表" ><img class="listAdd" th:src="@{/images/add.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="收藏"><img class="listCollection" th:src="@{/images/Collection1.png}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="" title="邓紫棋-穿越火线">邓紫棋-穿越火线</a>
+                                    <div class="oper">
+                                        <a href="javascript:void(0)" class="listPlay" title="播放" > <img class="listPlay" th:src="@{/images/Play00.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="添加到播放列表" ><img class="listAdd" th:src="@{/images/add.png}"></a>
+
+                                        <a href="javascript:void(0)" class="listPlay" title="收藏"><img class="listCollection" th:src="@{/images/Collection1.png}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="text-align: right">
+                                <td><a href="">查看全部></a></td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
 
-
         </div>
         <!--右侧歌手-->
-        <div class="col-md-3" style="height: 1390px;border: 1px solid green"></div>
+        <div class="col-md-3" style="height: 800px;border: 1px solid green">
+            <table width="270px" class="table table-hover table-striped">
+                <th>
+                    <h3>入驻歌手</h3>
+                    <a href=""><span style="float:right">查看全部></span></a>
+                </th>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <a href="/user/home?id=29879272" class="itm f-tdn">
+                                <div class="head col-md-3"><img class="j-img" src="http://p2.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=62y62"></div>
+                                <div class="ifo col-md-7">
+                                    <h4><span class="nm f-fs1 f-ib f-thide">张惠妹aMEI</span></h4>
+                                    <p class="f-thide s-fc3">台湾歌手张惠妹</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <a href="/user/home?id=29879272" class="itm f-tdn">
+                                <div class="head col-md-3"><img class="j-img" src="http://p2.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=62y62"></div>
+                                <div class="ifo col-md-7">
+                                    <h4><span class="nm f-fs1 f-ib f-thide">张惠妹aMEI</span></h4>
+                                    <p class="f-thide s-fc3">台湾歌手张惠妹</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <a href="/user/home?id=29879272" class="itm f-tdn">
+                                <div class="head col-md-3"><img class="j-img" src="http://p2.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=62y62"></div>
+                                <div class="ifo col-md-7">
+                                    <h4><span class="nm f-fs1 f-ib f-thide">张惠妹aMEI</span></h4>
+                                    <p class="f-thide s-fc3">台湾歌手张惠妹</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <a href="/user/home?id=29879272" class="itm f-tdn">
+                                <div class="head col-md-3"><img class="j-img" src="http://p2.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=62y62"></div>
+                                <div class="ifo col-md-7">
+                                    <h4><span class="nm f-fs1 f-ib f-thide">张惠妹aMEI</span></h4>
+                                    <p class="f-thide s-fc3">台湾歌手张惠妹</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
 
     </div>
 
@@ -298,4 +414,11 @@
         $('#myCarousel').carousel({interval:5000});
     })
 </script>
+
+<script>
+    // function f() {
+    //     this.addClass("dis")
+    // }
+</script>
+
 </html>

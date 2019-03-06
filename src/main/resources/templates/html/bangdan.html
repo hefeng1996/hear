@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MPlayer音乐播放器</title>
+    <link rel="stylesheet" th:href="@{/css/component.css}" type="text/css" media="all"/>
+    <!--公共样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div style="background-color: #d94f5c;height: 20px;"></div>
+    <div class="container">
+        <div style="text-align: left">
+            <h3>排行榜</h3>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-md-3" style="border: 1px red solid;height: 800px;background-color: #efefef">
+                <div class="mb-5"></div>
+                <table class="table table-hover">
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <a href="/user/home?id=29879272" class="itm f-tdn">
+                                    <div class="head col-md-3"><img th:src="@{/img/rege.jpg}" style="height: 72px;" alt="热歌榜"></div>
+                                    <div class="ifo col-md-9">
+                                        <h4>Hear音乐热歌榜</h4>
+                                    </div>
+                                    <!--<div class="col-md-2"></div>-->
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <a href="/user/home?id=29879272" class="itm f-tdn">
+                                    <div class="head col-md-3"><img th:src="@{/img/xinge.jpg}" style="height: 72px;" alt="新歌榜"></div>
+                                    <div class="ifo col-md-9">
+                                        <h4>Hear音乐新歌榜</h4>
+                                    </div>
+                                    <!--<div class="col-md-2"></div>-->
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <a href="/user/home?id=29879272" class="itm f-tdn">
+                                    <div class="head col-md-3"><img th:src="@{/img/yuanchuang.jpg}" style="height: 72px;" alt="原创榜"></div>
+                                    <div class="ifo col-md-9">
+                                        <h4>Hear音乐原创榜</h4>
+                                    </div>
+                                    <!--<div class="col-md-2"></div>-->
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6" style="border: 1px yellow solid;height: 800px;">
+                <div class="mb-5"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img th:src="@{/img/rege.jpg}" style="height: 152px;" alt="热歌榜">
+                        </div>
+                        <div class="col-md-9">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1" style="border: 1px green solid;height: 800px;"></div>
+            <div class="col-md-2" style="border: 1px yellow solid;height: 800px;">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+<script th:src="@{/bootstrap/jquery.js}"></script>
+<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+
+</html>

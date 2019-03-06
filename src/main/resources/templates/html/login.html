@@ -25,7 +25,7 @@
     <div align="center">
         <img id="" th:src="@{/images/logo.png}">
     </div>
-    <form action="" id="myform" method="post">
+    <form th:action="@{/hear}" id="myform" method="post">
         <div class="form-group">
             <input type="text" id="userName" name="userName" class="form-control"  value="" placeholder="用户名" style="width:310px">
         </div>
@@ -49,11 +49,12 @@
 
             <div id="regist"><button type="button" id="jump" class="btn btn-default"style="background-color: rgba(52,60,94,0.67);color: white;width: 100px" >注册</button></div>
         </div>
-        <div>
-            <a href="" class="btn btn-success">登录</a>
-        </div>
+        <!--<div>-->
+            <!--<a href="" class="btn btn-success">登录</a>-->
+        <!--</div>-->
+        <div class="mb-3"></div>
 
-        <div id="captcha" style="position: relative" ></div>
+        <div id="captcha" style="position: relative;top: 20px;" ></div>
         <div id="msg"></div>
     </form>
 </div>
@@ -69,6 +70,22 @@
         $(".background-pic").attr("src",contextPath+"/images/loginbg.jpg");
     });
 </script>-->
+<script>
+    $(function () {
+        //单次单选弹框
+        $("#onlyChoseAlert").click(function () {
+            var onlyChoseAlert = simpleAlert({
+                "content": "用户名或者密码错误!",
+                "buttons": {
+                    "确定": function () {
+                        onlyChoseAlert.close();
+                    }
+                }
+            })
+        })
+    })
+</script>
+
 <script type="text/javascript">
     jigsaw.init(document.getElementById("captcha"), function () {
 
@@ -84,8 +101,32 @@
     })
 </script><!-- 验证成功跳转事件 -->
 <script type="text/javascript" th:src="@{/js/code.js}"></script><!--验证码事件-->
+<script type="text/javascript">
+    jigsaw.init(document.getElementById('captcha'), function () {
 
+        var userName=$("#userName").val;
+        var password=$("#password").val();
+        if (userName!=""&&password!=""){
+            document.getElementById('msg').innerHTML = '登录成功！';
+            document.getElementById('myform').submit();
+        }else{
+            $("#onlyChoseAlert").trigger("click");/*用户信息为空弹窗*/
+        }
 
+    })
+</script><!--验证成功跳转事件-->
+<script type="text/javascript" th:inline="javascript">
+    function error() {
+        $("#onlyChoseAlert").trigger("click");
+    }
+    // var flag=${param.flag};
+    var flag=[[${param.flag}]];
+    if(flag=="2"){
+        $(document).ready(function(){
+            window.onload=error();
+        });
+    }
+</script><!--密码错误弹窗-->
 
 <script th:src="@{/js/popup.js}"></script>
 
