@@ -10,8 +10,14 @@
     <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
 
     <style>
-
+        .show{
+            display: block;
+        }
+        .non{
+            display: none;
+        }
     </style>
+
 </head>
 <body>
     <div style="background-color: #d94f5c;height: 20px;"></div>
@@ -26,7 +32,7 @@
                     <tr>
                         <td>
                             <div class="row">
-                                <a href="" class="itm f-tdn">
+                                <a href="javascript:void(0);" class="ban1">
                                     <div class="head col-md-3"><img th:src="@{/img/rege.jpg}" style="height: 72px;" alt="热歌榜"></div>
                                     <div class="ifo col-md-9">
                                         <h4>Hear音乐热歌榜</h4>
@@ -39,7 +45,7 @@
                     <tr>
                         <td>
                             <div class="row">
-                                <a href="" class="itm f-tdn">
+                                <a href="javascript:void(0);" class="ban2">
                                     <div class="head col-md-3"><img th:src="@{/img/xinge.jpg}" style="height: 72px;" alt="新歌榜"></div>
                                     <div class="ifo col-md-9">
                                         <h4>Hear音乐新歌榜</h4>
@@ -52,7 +58,7 @@
                     <tr>
                         <td>
                             <div class="row">
-                                <a href="" class="itm f-tdn">
+                                <a href="javascript:void(0);" class="ban3">
                                     <div class="head col-md-3"><img th:src="@{/img/yuanchuang.jpg}" style="height: 72px;" alt="原创榜"></div>
                                     <div class="ifo col-md-9">
                                         <h4>Hear音乐原创榜</h4>
@@ -66,7 +72,8 @@
             </div>
             <div class="col-md-6" style="border: 1px yellow solid;height: 800px;">
                 <div class="mb-5"></div>
-                <div class="">
+                <div class="tab1 show">
+                    <div>
                     <div class="row" style="text-align: left">
                         <div class="col-md-4">
                             <img th:src="@{/img/rege.jpg}" style="height: 152px;" alt="热歌榜">
@@ -97,7 +104,96 @@
                                 <td></td>
                                 <td></td>
                             </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </table>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="tab2 non">
+                    <div>
+                        <div class="row" style="text-align: left">
+                            <div class="col-md-4">
+                                <img th:src="@{/img/xinge.jpg}" style="height: 152px;" alt="新歌榜">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="mb-5">
+                                    <h3>Hear音乐新歌榜</h3>
+                                </div>
+                                <div>
+                                    <a class="btn" style="background-color: #0099FF;border-bottom-right-radius: 0;border-top-right-radius: 0" href=""><img style="width: 18px;height: 18px;" th:src="@{/images/Play00.png}" alt="">播放</a>
+                                    <a class="btn" style="position: relative;left: -4px;background-color: #0099FF;border-bottom-left-radius: 0;border-top-left-radius: 0;border-left:1px black solid ;" href=""><img style="width: 18px;height: 18px;" th:src="@{/images/add.png}" alt=""></a>
+                                    <a class="btn" href="" style="background-color: #d4d4d4"><img th:src="@{/images/download01.png}" style="width: 18px;height: 18px;" alt="">下载</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <h3>歌曲列表</h3>
+                        <div >
+                            <table class="table table-hover table-striped">
+                                <tr >
+                                    <th style="text-align: center">标题</th>
+                                    <th style="text-align: center">时长</th>
+                                    <th style="text-align: center">歌手</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab3 non">
+                    <div>
+                        <div class="row" style="text-align: left">
+                            <div class="col-md-4">
+                                <img th:src="@{/img/yuanchuang.jpg}" style="height: 152px;" alt="原创榜">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="mb-5">
+                                    <h3>Hear音乐原创榜</h3>
+                                </div>
+                                <div>
+                                    <a class="btn" style="background-color: #0099FF;border-bottom-right-radius: 0;border-top-right-radius: 0" href=""><img style="width: 18px;height: 18px;" th:src="@{/images/Play00.png}" alt="">播放</a>
+                                    <a class="btn" style="position: relative;left: -4px;background-color: #0099FF;border-bottom-left-radius: 0;border-top-left-radius: 0;border-left:1px black solid ;" href=""><img style="width: 18px;height: 18px;" th:src="@{/images/add.png}" alt=""></a>
+                                    <a class="btn" href="" style="background-color: #d4d4d4"><img th:src="@{/images/download01.png}" style="width: 18px;height: 18px;" alt="">下载</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <h3>歌曲列表</h3>
+                        <div >
+                            <table class="table table-hover table-striped">
+                                <tr >
+                                    <th style="text-align: center">标题</th>
+                                    <th style="text-align: center">时长</th>
+                                    <th style="text-align: center">歌手</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,5 +272,33 @@
 </body>
 <script th:src="@{/bootstrap/jquery.js}"></script>
 <script th:src="@{/bootstrap/bootstrap.min.js}"></script>
-
+<script>
+    $(document).ready(function() {
+        // $("#content div").hide(); // Initially hide all content
+        // $("#tabs li:first").attr("id","current"); // Activate first tab
+        // $("#content div:first").fadeIn();// Show first tab content
+        // $('#tabs a').click(function(e) {
+        //     e.preventDefault();
+        //     $("#content div").hide(); //Hide all content
+        //     $("#tabs li").attr("id",""); //Reset id's
+        //     $(this).parent().attr("id","current"); // Activate this
+        //     $('#' + $(this).attr('title')).fadeIn();// Show content for current tab
+        // });
+        $(".ban1").click(function () {
+            $(".tab2").removeClass("show").addClass("non");
+            $(".tab3").removeClass("show").addClass("non");
+            $(".tab1").removeClass("non").addClass("show");
+        });
+        $(".ban2").click(function () {
+            $(".tab1").removeClass("show").addClass("non");
+            $(".tab3").removeClass("show").addClass("non");
+            $(".tab2").removeClass("non").addClass("show");
+        });
+        $(".ban3").click(function () {
+            $(".tab2").removeClass("show").addClass("non");
+            $(".tab1").removeClass("show").addClass("non");
+            $(".tab3").removeClass("non").addClass("show");
+        });
+    });
+</script>
 </html>
