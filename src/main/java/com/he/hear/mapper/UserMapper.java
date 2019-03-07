@@ -2,10 +2,8 @@ package com.he.hear.mapper;
 
 import com.he.hear.pojo.User;
 import com.he.hear.pojo.UserExample;
-
-import java.util.List;
-
 import com.he.hear.pojo.UserWithBLOBs;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

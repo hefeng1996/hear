@@ -27,38 +27,87 @@
         </javaTypeResolver>
 
         <!-- 数据表对应的model层  -->
-        <javaModelGenerator targetPackage="com.he.hear.pojo" targetProject="src">
+        <javaModelGenerator targetPackage="com.he.hear.pojo" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
         <!-- sql com.he.hear.mapper 映射配置文件 -->
-        <sqlMapGenerator targetPackage="com.he.hear.mapper"  targetProject="src">
-            <property name="enableSubPackages" value="true" />
+        <sqlMapGenerator targetPackage="com.he.hear.mapper"  targetProject="src/main/resources">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- mybatis3中的mapper接口 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.he.hear.mapper" targetProject="src">
-            <property name="enableSubPackages" value="true" />
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.he.hear.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
         <!-- 数据表进行生成操作 schema:相当于库名; tableName:表名; domainObjectName:对应的DO -->
-        <table schema="music" tableName="admin" domainObjectName="Admin"/>
-        <table schema="music" tableName="user" domainObjectName="User"/>
-        <table schema="music" tableName="comments" domainObjectName="Comments"/>
-        <table schema="music" tableName="moment" domainObjectName="Moment"/>
-        <table schema="music" tableName="playrecord" domainObjectName="PlayRecord"/>
-        <table schema="music" tableName="praise" domainObjectName="Praise"/>
-        <table schema="music" tableName="relation" domainObjectName="Relation"/>
-        <table schema="music" tableName="singer" domainObjectName="Singer"/>
-        <table schema="music" tableName="song" domainObjectName="Song"/>
-        <table schema="music" tableName="song_songlist" domainObjectName="songSongList"/>
-        <table schema="music" tableName="songlist" domainObjectName="songList"/>
-        <table schema="music" tableName="songlist_tag" domainObjectName="songListTag"/>
-        <table schema="music" tableName="tag" domainObjectName="Tag"/>
-        <table schema="music" tableName="user_singer" domainObjectName="userSinger"/>
-        <table schema="music" tableName="user_songlist" domainObjectName="userSongList"/>
-        <table schema="music" tableName="user_tag" domainObjectName="userTag"/>
+        <table schema="music" tableName="admin" domainObjectName="Admin"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="user" domainObjectName="User"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="comments" domainObjectName="Comments"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="moment" domainObjectName="Moment"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="playrecord" domainObjectName="PlayRecord"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="praise" domainObjectName="Praise"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="relation" domainObjectName="Relation"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="singer" domainObjectName="Singer"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="song" domainObjectName="Song"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="song_songlist" domainObjectName="SongSongList"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="songlist" domainObjectName="SongList"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="songlist_tag" domainObjectName="SongListTag"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="tag" domainObjectName="Tag"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="user_singer" domainObjectName="UserSinger"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="user_songlist" domainObjectName="UserSongList"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
+        <table schema="music" tableName="user_tag" domainObjectName="UserTag"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true"/>
         <table schema="music" tableName="warning" domainObjectName="Warning"
                        enableCountByExample="true" enableUpdateByExample="true"
                        enableDeleteByExample="true" enableSelectByExample="true"

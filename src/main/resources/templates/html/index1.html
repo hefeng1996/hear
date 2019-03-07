@@ -96,8 +96,8 @@
         <img href="#"  id="logo" th:src="@{/main/img/logo.png}"/>
         <ul class="menu__list" id="ul">
             <li class="menu__item menu__item&#45;&#45;current" style="margin-left: 1px"><a href="#" class="menu__link">推荐</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a class="menu__link" onclick="window.location = '@{bangdan.action' " href="javascript:void(0) ">排行榜</a></li>
-            <li class="menu__item" style="margin-left: 1px"><a class="menu__link" onclick="window.location = '@{songlist/huayu.action?id=31' " href="javascript:void(0)">歌单</a></li>
+            <li class="menu__item" style="margin-left: 1px"><a class="menu__link" onclick="window.location = '@{bangdan.action' " href="javascript:void(0); ">排行榜</a></li>
+            <li class="menu__item" style="margin-left: 1px"><a class="menu__link" onclick="window.location = '@{songlist/huayu.action?id=31' " href="javascript:void(0);">歌单</a></li>
             <li class="menu__item" style="margin-left: 1px"><a href="#" class="menu__link" onclick="window.location = '@{artist/recommendsinger.action' " >歌手</a></li>
             <li class="menu__item" style="margin-left: 1px"><a href="#" class="menu__link" onclick="window.location = '@{user/mysongs.action'">我的音乐</a></li>
             <li class="menu__item" style="margin-left: 1px"><a href="#" class="menu__link" onclick="window.location='@{friend/friendcircle.action'">朋友</a></li>
@@ -112,7 +112,7 @@
                     <a href="#" class="menu__link" onclick="window.location = '@{jsp/login.jsp' " >登录</a>
                 </th:if>
                 <th:if test="${not empty sessionScope.user}">
-                    <a href="javascript:void(0)" style="position:relative;top: 10px;width: 80px;"onclick="window.location ='<%=basePath%>user/personalInformation.action' " ><img style="border-radius: 40px;width: 40px;height: 40px;display: inline;" src="<%= resourcesPath%>head/${sessionScope.user.img}" ></a>
+                    <a href="javascript:void(0);" style="position:relative;top: 10px;width: 80px;"onclick="window.location ='<%=basePath%>user/personalInformation.action' " ><img style="border-radius: 40px;width: 40px;height: 40px;display: inline;" src="<%= resourcesPath%>head/${sessionScope.user.img}" ></a>
                     <a href="#"  style="position:relative;top: 10px;width: 80px;color: #e3e3e3;margin-left: 10px" onclick="window.location ='<%=basePath%>user/logout.action'">退出</a>
                 </th:if>
             </li>
