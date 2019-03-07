@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cef908c-2f1d-469c-ab61-9b10aa556b50" name="Default Changelist" comment="iframe及跳转">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/Collection1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/Play00.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/html/bangdan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/html/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" />
+    <list default="true" id="6cef908c-2f1d-469c-ab61-9b10aa556b50" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/a1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/a3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/he/hear/controller/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/he/hear/controller/Hear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/code.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/mplayer-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/mplayer-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/html/hear.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/html/hear.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/html/bangdan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/html/bangdan.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,35 +18,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/hear.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1524">
-              <caret line="156" column="66" selection-start-line="156" selection-start-column="66" selection-end-line="156" selection-end-column="66" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#span#0;n#div#6;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#7;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#button#0;n#form#0;n#div#7;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/mplayer-list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1665">
-              <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="3454">
               <caret line="290" column="58" selection-start-line="290" selection-start-column="48" selection-end-line="290" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -77,7 +33,6 @@
                 <element signature="n#div#3;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#2;n#table#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -94,7 +49,6 @@
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#2;n#table#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#th#0;n#table#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/mplayer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
+            <state relative-caret-position="9658">
               <caret line="439" column="22" selection-start-line="439" selection-start-column="22" selection-end-line="439" selection-end-column="22" />
             </state>
           </provider>
@@ -127,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="814">
               <caret line="37" column="59" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="59" />
             </state>
           </provider>
@@ -136,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/bangdan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+            <state relative-caret-position="485">
+              <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -146,13 +100,23 @@
                 <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#td#0;n#tr#2;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/a1.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/a3.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -163,20 +127,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/he/hear/controller/Hear.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="220">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#253#254#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#711#712#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="533" lean-forward="true" selection-start-line="533" selection-end-line="533" />
+            <state relative-caret-position="11726">
+              <caret line="533" selection-start-line="533" selection-end-line="533" />
             </state>
           </provider>
         </entry>
@@ -339,10 +293,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="212" />
-    <option name="y" value="29" />
-    <option name="width" value="1499" />
-    <option name="height" value="949" />
+    <option name="x" value="184" />
+    <option name="y" value="41" />
+    <option name="width" value="1661" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -353,7 +307,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -470,7 +424,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hear" type="b2602c69:ProjectViewProjectNode" />
@@ -493,7 +447,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,7 +458,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551879755005" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551928866988" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -515,21 +469,21 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Code\he\new\hear\src\main\resources\static\images" />
-      <recent name="D:\Code\he\new\hear\src\main\resources\static\js" />
-      <recent name="D:\Code\he\new\hear\src\main\resources\static\css" />
-      <recent name="D:\Code\he\new\hear\src\main\resources\templates\html" />
-      <recent name="D:\Code\he\new\hear\src\main\resources\static\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Code\he\new\hear\src\main\resources\static\images" />
       <recent name="D:\Code\he\new\hear\src\main\resources\com.he.hear.mapper" />
       <recent name="D:\Code\he\new\hear\src\main\java\com" />
       <recent name="D:\Code\he\new\hear\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\he\new\hear\src\main\resources\static\img" />
+      <recent name="D:\Code\he\new\hear\src\main\resources\static\images" />
+      <recent name="D:\Code\he\new\hear\src\main\resources\static\js" />
+      <recent name="D:\Code\he\new\hear\src\main\resources\static\css" />
+      <recent name="D:\Code\he\new\hear\src\main\resources\templates\html" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -588,7 +542,8 @@
       <workItem from="1550193794236" duration="599000" />
       <workItem from="1551757268216" duration="14000" />
       <workItem from="1551757556422" duration="4118000" />
-      <workItem from="1551763573195" duration="22907000" />
+      <workItem from="1551763573195" duration="23019000" />
+      <workItem from="1551928175262" duration="533000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交git">
       <created>1545554948413</created>
@@ -695,11 +650,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549969495153</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="主页+榜单">
+      <created>1551879803201</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1551879803202</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149221000" />
+    <option name="totallyTimeSpent" value="149866000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,7 +676,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15778251" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15778251" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -724,7 +686,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32769045" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20498915" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20498915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -753,6 +715,8 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="测试提交git" />
     <MESSAGE value="主页推进（未完成）" />
     <MESSAGE value="增加虚拟路径" />
@@ -760,19 +724,10 @@
     <MESSAGE value="界面优化" />
     <MESSAGE value="重新" />
     <MESSAGE value="iframe及跳转" />
-    <option name="LAST_COMMIT_MESSAGE" value="iframe及跳转" />
+    <MESSAGE value="主页+榜单" />
+    <option name="LAST_COMMIT_MESSAGE" value="主页+榜单" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/he/hear/mapper/userSingerMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/codeProcessor.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/he/hear/mapper/userSongListMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1013,73 +968,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/popup.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/mplayer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="439" column="22" selection-start-line="439" selection-start-column="22" selection-end-line="439" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="81" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="81" />
-          <folding>
-            <element signature="e#321#327#1" expanded="true" />
-            <element signature="e#11411#11415#0" expanded="true" />
-            <element signature="e#22430#22434#0" expanded="true" />
-            <element signature="e#33422#33426#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/he/hear/controller/Hear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/mplayer-list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="533" lean-forward="true" selection-start-line="533" selection-end-line="533" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/hear.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1524">
+        <state relative-caret-position="3432">
           <caret line="156" column="66" selection-start-line="156" selection-start-column="66" selection-end-line="156" selection-end-column="66" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1092,9 +983,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/mplayer-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2508">
+          <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="3454">
           <caret line="290" column="58" selection-start-line="290" selection-start-column="48" selection-end-line="290" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1107,7 +1005,6 @@
             <element signature="n#div#3;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#2;n#table#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1124,15 +1021,67 @@
             <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#2;n#table#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#th#0;n#table#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/mplayer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9658">
+          <caret line="439" column="22" selection-start-line="439" selection-start-column="22" selection-end-line="439" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="81" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="81" />
+          <folding>
+            <element signature="e#321#327#1" expanded="true" />
+            <element signature="e#11411#11415#0" expanded="true" />
+            <element signature="e#22430#22434#0" expanded="true" />
+            <element signature="e#33422#33426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="37" column="59" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/demo.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/he/hear/controller/Hear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11726">
+          <caret line="533" selection-start-line="533" selection-end-line="533" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/a3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/a1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/html/bangdan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+        <state relative-caret-position="485">
+          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1141,10 +1090,10 @@
             <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#td#0;n#tr#2;n#table#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
