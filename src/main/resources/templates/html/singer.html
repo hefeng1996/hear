@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main">
+    <!--左侧部分-->
+    <div id="leftpart" class="leftpart">
+        <%--歌手大图--%>
+        <div class="singerinfo">
+            <div class="singername">
+                <h2>林俊杰</h2>
+            </div>
+            <div class="singerimg">
+                <img class="simg" src="<%= imgPath%>images/640singer/${singerhost.bigimg}">
+                <a href="javascript:void(0)" id="collectsinger_img" class="collectsinger" onclick="collectedSinger('${singerhost.id}')">
+                    <!--<c:if test="${singerCollected==0}">-->
+                        <!--<img id="simg" src="<%= basePath%>singerhost/shimg/colectsinger.png" />-->
+                    <!--</c:if>-->
+                    <!--<c:if test="${singerCollected==1}">-->
+                        <!--<img id="simg" src="<%= basePath%>singerhost/shimg/collectedsinger.png" />-->
+                    <!--</c:if>-->
+                </a>
+            </div>
+        </div>
+        <!--中间选项卡部分-->
+        <div class="aui-nav-content-box">
+            <div class="aui-nav-list-box">
+                <ul>
+                    <li id="li1" class="aui-current">
+                        <a href="#">热门单曲</a>
+                    </li>
+                    <li id="li2">
+                        <a href="#">所有专辑</a>
+                    </li>
+                    <li>
+                        <a href="#">歌手介绍</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="aui-nav-list-tab">
+                <!--热门单曲内容-->
+                <div class="aui-nav-list-item" style="display:block">
+                    <!--两个按钮-->
+                    <div class="btncontainer">
+                        <!--播放-->
+                        <div class="btncon">
+                            <a href="#">
+                                <span class="playbtn"><img class="playbtn-img" src="<%= basePath%>singerhost/shimg/play.png"/>&nbsp;播放</span>
+                                <div class="imgplaybg"></div>
+                            </a>
+                            <a href="#">
+                                <span class="collectbtn"><img class="collectbtn-img" src="<%= basePath%>singerhost/shimg/plus.png"/> </span>
+                                <div class="imgcolbg"></div>
+                            </a>
+                        </div>
+                        <!--收藏热门-->
+                        <div class="btn-hotcon">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal1" onclick="collectsongs('${singerhost.id}')">
+                                <span class="collectionbtn"><img class="colbtn-img" src="<%= basePath%>singerhost/shimg/collection.png"/>&nbsp;收藏热门</span>
+                                <div class="imgcollectbg"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--歌曲列表-->
+                    <div class="tablelist">
+                        <table class="tab" id="tab">
+                            <tbody>
+                            <c:forEach items="${songs}" var="song" varStatus="s">
+                                <tr>
+                                    <!--序号和播放图标-->
+                                    <td class="w1">
+                                        <span>${s.count}</span>
+                                        <%--<%= basePath%>songplay.action?id=${song.id}--%>
+                                        <a href="javascript:playSongid('${song.id}')" class="ply"><img class="plyimg" id="playimg" src="<%= basePath%>singerhost/shimg/play1.png"/> </a>
+                                    </td>
+                                    <!--歌曲名-->
+                                    <td style="width: 309px">
+                                        <span id="songtxt" class="txt"><a href="<%=basePath%>song.action?id=${song.id}">${song.name}</a></span>
+                                    </td>
+                                    <!--歌曲时长-->
+                                    <td class="w3">
+                                        <span class="songtime">${song.time}</span>
+
+                                        <div class="songtimebg" id="songtimebg">
+                                            <a href="javascript:sendSongid('${song.id}')"><img src="<%= basePath%>singerhost/shimg/plus01.png"/></a>
+                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal1" onclick="collectSong('${song.id}','${singerhost.id}')"><img src="<%= basePath%>singerhost/shimg/collect01.png"/></a>
+                                            <a href="javascript:void(0)" id="ashare" data-toggle="modal" data-target="#myModal" onclick="shareSong('${song.id}','${song.name}','${singerhost.id}','${singerhost.name}')"><img src="<%= basePath%>singerhost/shimg/share01.png"/></a>
+                                            <a href="<%= imgPath%>song/${song.url}" download="${song.name}"><img src="<%= basePath%>singerhost/shimg/download01.png"/></a>
+                                        </div>
+                                        <c:if test="${not empty sessionScope.user}">
+                                            <%--新建歌单弹出框--%>
+                                            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" style="width: 475px;">
+                                                    <div class="modal-content" style="height: 240px;">
+                                                        <div class="modal-header modalheader">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #ffffff";>&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel2" style="color: #ffffff;font-size: 14px";>新建歌单</h4>
+                                                        </div>
+                                                        <div class="modal-body newcontent">
+                                                            <form id="newsonglist_form" class="newsonglistform" action="<%=basePath%>songlist/newsonglist.action" method="post" enctype="multipart/form-data">
+                                                                <div class="inputcontent">
+                                                                    <label class="col-sm-3 control-label setfont">歌单名：</label>
+                                                                    <div class="col-sm-9 setinput">
+                                                                        <input type="text" name="newsonglist" class="form-control" value=""/>
+                                                                        <input type="hidden" name="ncolsongid" id="ncolsongid" value="">
+                                                                        <input type="hidden" name="nsongs" id="nsongs" value="">
+                                                                        <%--<input type="hidden" name="colsonglistid" id="ncolsonglistid" value="${songlist.id}">--%>
+                                                                        <input type="hidden" name="nsingerid" id="nsingersid" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="discribe">可通过“收藏”将音乐添加到新歌单中</div>
+                                                                <div class="newsonglist_button">
+                                                                    <button type="submit" class="btn btn-primary">
+                                                                        新建
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                                        取消
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal -->
+                                            </div>
+
+                                            <%--收藏歌曲弹出框--%>
+
+                                            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" style="width: 475px;">
+                                                    <div class="modal-content"style="min-height: 380px;">
+                                                        <div class="modal-header modalheader">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #ffffff";>&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel1" style="color: #ffffff;font-size: 14px";>添加到歌单</h4>
+                                                        </div>
+                                                        <%--新建歌单连接--%>
+                                                        <div class="modal-body colectsonglist">
+                                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal2" data-dismiss="modal" >
+                                                                <img style="width: 100%;height: 56px;" src="<%= basePath%>singerhost/shimg/createSonglist.png"/>
+                                                            </a>
+                                                        </div>
+                                                        <div class="modal-body colectsonglist">
+                                                            <form id="collect_form" class="collect_form" action="<%=basePath%>songlist/colsonglist.action" method="post" enctype="multipart/form-data">
+                                                                <ul class="collect_ul" style="min-height: 56px;">
+                                                                    <c:forEach items="${songlists}" var="songlist">
+                                                                        <li class="collect_li" onclick="jingjing()">
+                                                                            <div class="collect_li_div">
+                                                                                <a class="collect_li_div_left" href="#">
+                                                                                    <img src="<%= imgPath%>images/200songlist/${songlist.img}"/>
+                                                                                    <%--需要更改图片地址--%>
+                                                                                </a>
+                                                                                <a class="collect_li_songlistname">
+                                                                                    ${songlist.name}
+                                                                                </a>
+                                                                                <p class="collect_li_songnum">${songlist.songNum}</p>
+                                                                            </div>
+                                                                            <input type="hidden" name="colsongid" id="colsongid" value="">
+                                                                            <input type="hidden" name="colsonglistid" id="colsonglistid" value="${songlist.id}">
+                                                                            <input type="hidden" name="singerid" id="singersid" value="">
+                                                                            <%--json字符串形式发到后台--%>
+                                                                            <input type="hidden" name="songs" id="songs" value="">
+                                                                        </li>
+                                                                    </c:forEach>
+                                                                </ul>
+                                                            </form>
+                                                        </div>
+
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal -->
+                                            </div>
+                                            <%--分享歌曲弹出框--%>
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                                                <div class="modal-dialog" style="width: 475px;">
+                                                    <form id="login_form" class="share_form" action="<%=basePath%>friend/releaseSong.action" method="post" enctype="multipart/form-data">
+                                                        <div class="modal-content">
+                                                            <%--表头--%>
+                                                            <div class="modal-header modalheader">
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-hidden="true" style="color: #ffffff";>×
+                                                                </button>
+                                                                <h4 class="modal-title" id="myModalLabel" style="color: #ffffff;font-size: 14px;">
+                                                                    分享
+                                                                </h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="share_text">
+                                                                    <textarea name="text" id="" form-control class="share_textarea" cols="70" rows="8"></textarea>
+                                                                    <div class="share_info">
+                                                                        <p class="share_info-txt">单曲：<span id="songInfo"></span></p>
+                                                                        <input type="hidden" name="songid" id="songid" value="">
+                                                                        <input type="hidden" name="singerid" id="singerid" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <%--上传--%>
+                                                            <div class="modal-body share_upload">
+                                                                <%--上传图片--%>
+                                                                <div class="form-group" id="uploadForm" enctype='multipart/form-data'>
+                                                                    <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                                        <div class="fileinput-new thumbnail" style="max-width: 200px;height: auto;max-height:150px;">
+                                                                            <img id='picImg' style="width: 100%;height: auto;max-height: 140px;"/>
+                                                                        </div>
+                                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                                        <div>
+                                                                            <span class="btn btn-primary btn-file">
+                                                                                <span class="fileinput-new">选择图片</span>
+                                                                                <span class="fileinput-exists">换一张</span>
+                                                                                <input type="file" name="imgFileUp" id="picID" accept="image/*"/>
+                                                                            </span>
+                                                                            <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <%--结束图片上传--%>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    分享
+                                                                </button>
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                                    取消
+                                                                </button>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </form>
+                                                </div><!-- /.modal-dialog -->
+                                            </div><!-- /.modal -->
+                                        </c:if>
+                                    </td>
+                                    <!--专辑名-->
+                                    <td class="w4">
+										<span class="albumtxt">
+											<a href="#">${song.album.name}</a>
+										</span>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--所有专辑内容-->
+                <div class="aui-nav-list-item">
+                    <!--背景板-->
+                    <div class="albumcontainer">
+                        <!--专辑单元-->
+                        <c:if test="${empty albums}">
+                            ${warning}
+                        </c:if>
+                        <c:forEach items="${albums}" var="album">
+                            <div class="singerhost-albumcontain">
+                                <div class="ablumimgcon">
+                                    <a href="<%=basePath%>album.action?id=${album.id}"><img class="albumimg" src="<%= imgPath%>images/200album/${album.img}"/></a>
+                                </div>
+                                <p class="album-name">${album.name}</p>
+                                <p>
+                                    <fmt:formatDate value="${album.date}" pattern="yyyy-MM-dd"/>
+                                </p>
+                            </div>
+                        </c:forEach>
+
+                    </div>
+                </div>
+                <!--歌手介绍-->
+                <div class="aui-nav-list-item">
+                    <div>
+                        <div class="introduce-head">
+                            <h2>${singerhost.name}简介</h2>
+                        </div>
+                        <div class="introduce-body">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;
+                                ${singerhost.introduce}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右侧部分-->
+    <div id="rightpart" class="rightpart">
+        <div class="right-contain">
+            <h3 class="right-head">
+                <span>相似歌手</span>
+            </h3>
+            <div class="right-body">
+                <c:forEach items="${similarsingers}" var="singer">
+                    <div class="right-body-singerpart">
+                        <div class="right-body-singerpart-img">
+                            <a href="<%= basePath%>artist/singerhost.action?id=${singer.id}">
+                                <img class="singerpart-singerimg" src="<%= imgPath%>images/100singer/${singer.img}"/>
+                            </a>
+                        </div>
+                        <p><a class="singerimg-a" href="<%= basePath%>artist/singerhost.action?id=${singer.id}">${singer.name}</a></p>
+                    </div>
+                </c:forEach>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

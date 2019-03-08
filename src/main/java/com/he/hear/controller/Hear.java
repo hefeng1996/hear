@@ -34,4 +34,9 @@ public class Hear {
         return "html/bangdan";
     }
 
+    @RequestMapping("/songList")
+    public String songList(){
+        return "html/songList";
+    }
+
 }

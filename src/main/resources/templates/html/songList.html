@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MPlayer音乐播放器</title>
+    <link rel="stylesheet" th:href="@{/css/component.css}" type="text/css" media="all"/>
+    <!--公共样式-->
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
+    <style>
+        .img1 img{
+            transition: all 0.6s;
+        }
+        .img1 img:hover{-moz-transform: scale(1.1); -ms-transform: scale(1.1);-webkit-transform:scale(1.1);z-index: 6;}
+        .close{
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+<div style="background-color: #d94f5c;height: 20px;"></div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3" style="text-align: left">
+            <h2 style="">全部</h2>
+
+        </div>
+        <div class="col-md-2" style="top: 8px;left: -15em">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="margin: 10px;height: 36px;width: 120px;">
+                <p style="font-size: 1.2em">选择分类﹀</p> <!--<img style="margin-left: 10px" th:src="@{/images/2.jpg}"/>-->
+            </button>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                全部风格
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <table>
+                                <tr>
+                                    <td style="border-bottom: 1px solid red"><img th:src="@{/img/yu.png}"></td>
+                                    <td style="border-bottom: 1px solid red">语种</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 50px;"> </td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px;margin-right: 10px;margin-left: 10px"><a  href="<%= basePath%>songlist/huayu.action?id=1" style="color: black;">华语</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=6" style="color: black;">欧美</a></td>
+                                                <td style="width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=7" style="color: black;">日韩</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid red"><img th:src="@{/img/feng.png}"></td>
+                                    <td style="border-bottom: 1px solid red">风格</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 50px;"> </td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=2" style="color: black;">流行</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=8" style="color: black;">摇滚</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=4" style="color: black;">民谣</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=3" style=" color: black;">古风</a></td>
+                                                <td style=" width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=9" style="color: black;">轻音乐</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid red"><img th:src="@{/img/chang.png}"></td>
+                                    <td style="border-bottom: 1px solid red">场景</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 50px;"> </td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px;"><a  href="<%= basePath%>songlist/huayu.action?id=5" style="color: black;">清晨</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=10" style="color: black;">夜晚</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=11" style="color: black;">学习</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=12" style="color: black;">工作</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=13" style="color: black;">午休</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a  href="<%= basePath%>songlist/huayu.action?id=14" style="color: black;">下午茶</a></td>
+                                                <td style=" width: 50px"><a style="color: black;"  href="<%= basePath%>songlist/huayu.action?id=15">运动</a></td>
+
+                                            </tr>
+                                            <tr style="height: 8px"><td></td></tr>
+                                            <tr >
+                                                <td style="width: 50px;"> </td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=16" style="color: black;">散步</a></td>
+                                                <td style=" width: 50px"><a style="color: black;" href="<%= basePath%>songlist/huayu.action?id=17">酒吧</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid red"><img th:src="@{/img/qing.png}"></td>
+                                    <td style="border-bottom: 1px solid red">情感</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 50px;"> </td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px;"><a href="<%= basePath%>songlist/huayu.action?id=18" style="color: black;">怀旧</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=19" style="color: black;">清新</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=20" style="color: black;">安静</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=21" style="color: black;">伤感</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=22" style="color: black;">治愈</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=23" style="color: black;">思念</a></td>
+                                                <td style=" width: 50px"><a style="color: black;" href="<%= basePath%>songlist/huayu.action?id=24">浪漫</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img th:src="@{/img/zhu.png}"></td>
+                                    <td>主题</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 50px;"> </td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px;"><a href="<%= basePath%>songlist/huayu.action?id=25" style="color: black;">80后</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=26" style="color: black;">90后</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=27" style="color: black;">00后</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=28" style="color: black;">经典</a></td>
+                                                <td style="border-right: 1px solid #e5e5e5;width: 50px"><a href="<%= basePath%>songlist/huayu.action?id=29" style="color: black;">翻唱</a></td>
+                                                <td style=" width: 50px"><a style="color: black;" href="<%= basePath%>songlist/huayu.action?id=30">吉他</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+
+    </div>
+    <div style="height: 2px; border: 1px solid red;width: 100%; margin-top: 10px; margin-bottom: 2em"></div>
+    <!--<div class="row">-->
+        <!--<div class="col-md-3">-->
+            <!--<div href="#" class="thumbnail" style="">-->
+                <!--<img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" style="height: 140px;width: 140px" alt="...">-->
+                <!--&lt;!&ndash;<img th:src="@{/img/demo.jpg}" alt="...">&ndash;&gt;-->
+                <!--<div class="Info" >-->
+                    <!--<span class="listen"><img class="Img-15" th:src="@{/images/listen.png}">  22222</span>-->
+                    <!--<span class="play" ><img class="Img-15" th:src="@{/images/play.png}" alt=""></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="songTitle">-->
+                <!--<a href="">江南</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3 col-md-2">
+                <a href=""><img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" class="img-rounded" style="height: 140px;width: 140px"/></a>
+                <a href="">江南</a>
+            </div>
+            <div class="span3 col-md-2">
+                <a href=""><img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" class="img-rounded" style="height: 140px;width: 140px"/></a>
+                <a href="">江南</a>
+            </div>
+            <div class="span3 col-md-2">
+                <a href=""><img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" class="img-rounded" style="height: 140px;width: 140px"/></a>
+                <a href="">江南</a>
+            </div>
+            <div class="span3 col-md-2">
+                <a href=""><img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" class="img-rounded" style="height: 140px;width: 140px"/></a>
+                <a href="">江南</a>
+            </div>
+            <div class="span3 col-md-2">
+                <a href=""><img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" class="img-rounded" style="height: 140px;width: 140px"/></a>
+                <a href="">江南</a>
+            </div>
+            <div class="span3 col-md-2">
+                <a href=""><img th:src="@{/Hear}+'/img/head/林俊杰.jpg'" class="img-rounded" style="height: 140px;width: 140px"/></a>
+                <a href="">江南</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    </div>
+</div>
+</body>
+<script th:src="@{/bootstrap/jquery.js}"></script>
+<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+
+</html>

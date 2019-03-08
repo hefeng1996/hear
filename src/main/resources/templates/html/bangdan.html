@@ -272,18 +272,9 @@
 </body>
 <script th:src="@{/bootstrap/jquery.js}"></script>
 <script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+<!--榜单切换-->
 <script>
     $(document).ready(function() {
-        // $("#content div").hide(); // Initially hide all content
-        // $("#tabs li:first").attr("id","current"); // Activate first tab
-        // $("#content div:first").fadeIn();// Show first tab content
-        // $('#tabs a').click(function(e) {
-        //     e.preventDefault();
-        //     $("#content div").hide(); //Hide all content
-        //     $("#tabs li").attr("id",""); //Reset id's
-        //     $(this).parent().attr("id","current"); // Activate this
-        //     $('#' + $(this).attr('title')).fadeIn();// Show content for current tab
-        // });
         $(".ban1").click(function () {
             $(".tab2").removeClass("show").addClass("non");
             $(".tab3").removeClass("show").addClass("non");
@@ -301,4 +292,6 @@
         });
     });
 </script>
+
+
 </html>
