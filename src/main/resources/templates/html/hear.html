@@ -123,8 +123,8 @@
 <script th:src="@{/js/mplayer-functions.js}"></script>
 <script src="//cdn.bootcss.com/jquery-nstslider/1.0.13/jquery.nstSlider.min.js"></script>
 
-<script th:inline="javascript">//导航跳转
-    var contextPath = [[${#request.getContextPath()}]];//获取当前应用路径
+<script>//导航跳转
+    // var contextPath = [[${#request.getContextPath()}]];//获取当前应用路径
     var pre=0;
     var ind=["MainRecommend","MainRankingList","MainSongList","MainSinger","MainMyMusic","MainFriend"];
     jQuery(function () {
