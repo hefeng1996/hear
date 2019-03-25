@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6cef908c-2f1d-469c-ab61-9b10aa556b50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/html/hear.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/html/hear.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/code.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2376">
-              <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+            <state relative-caret-position="308">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -199,6 +198,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/html/login.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/html/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/html/hear.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/code.css" />
       </list>
     </option>
   </component>
@@ -247,8 +247,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="168" />
-    <option name="y" value="161" />
+    <option name="x" value="153" />
+    <option name="y" value="61" />
     <option name="width" value="1499" />
     <option name="height" value="926" />
   </component>
@@ -401,7 +401,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552212076937" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552228229326" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -464,7 +464,7 @@
       <workItem from="1545873593025" duration="2775000" />
       <workItem from="1545904547131" duration="3635000" />
       <workItem from="1552107934890" duration="2829000" />
-      <workItem from="1552191129323" duration="3129000" />
+      <workItem from="1552191129323" duration="3785000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交git">
       <created>1545554948413</created>
@@ -515,14 +515,22 @@
       <option name="project" value="LOCAL" />
       <updated>1546080827926</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="界面优化">
+      <created>1552212131191</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552212131191</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80310000" />
+    <option name="totallyTimeSpent" value="80966000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="154" y="71" width="1499" height="926" extended-state="1" />
+    <frame x="153" y="61" width="1499" height="926" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22585128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1000,8 +1008,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/code.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+        <state relative-caret-position="308">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
